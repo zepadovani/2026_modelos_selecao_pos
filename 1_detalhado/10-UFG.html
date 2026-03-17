@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UFG — PPG Música</title>
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    :root { --c: #3273BA; --cl: #eef3f9; }
+    body { display: flex; flex-direction: column; margin: 0; padding: 0; min-height: 100vh; overflow-x: hidden; }
+    .layout-wrapper { display: flex; flex: 1; width: 100%; transition: all 0.3s ease; }
+    #main-content { flex: 1; transition: flex 0.3s ease; width: 100%; padding-bottom: 40px; }
+    #side-panel { width: 0; overflow: hidden; transition: width 0.3s ease; background: #fff; border-left: 1px solid #ccc; display: flex; flex-direction: column; }
+    #side-panel.open { width: 50%; }
+    #main-content.shrunk { width: 50%; flex: none; }
+    #panel-header { padding: 10px 15px; background: #f8f9fa; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #dee2e6; }
+    #panel-header h3 { margin: 0; font-size: 1.1rem; color: #333; }
+    #panel-content { flex: 1; overflow-y: auto; padding: 20px; font-size: 0.95rem; line-height: 1.6; color: #333; }
+    .close-btn { cursor: pointer; background: none; border: none; font-size: 1.5rem; color: #666; transition: color 0.2s; }
+    .close-btn:hover { color: #000; }
+    .ai-notice { background: #fff3cd; color: #856404; padding: 12px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ffeeba; font-size: 0.9rem; line-height: 1.4; }
+    .docs-bar { padding: 10px 20px; background: #fff; border-bottom: 1px solid #eee; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .doc-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f0f0f0; border-radius: 20px; text-decoration: none; color: #333; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+    .doc-link:hover { background: #e0e0e0; }
+  </style>
+  
+        <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft' && '09-UFBA.html') {
+                window.location.href = '09-UFBA.html';
+            } else if (event.key === 'ArrowRight' && '11-UFPR.html') {
+                window.location.href = '11-UFPR.html';
+            }
+        });
+        </script>
+        
+  <script>
+    function openPanel(type, docUrl) {
+        document.getElementById('side-panel').classList.add('open');
+        document.getElementById('main-content').classList.add('shrunk');
+        const contentDiv = document.getElementById('panel-content');
+        const headerTitle = document.getElementById('panel-title');
+
+        if (type === 'pdf') {
+            headerTitle.innerHTML = '<i class="ph ph-file-pdf"></i> Edital Original (PDF)';
+            contentDiv.innerHTML = `<iframe src="${docUrl}" width="100%" height="100%" style="border:none; min-height: 80vh;"></iframe>`;
+        } else if (type === 'md') {
+            headerTitle.innerHTML = '<i class="ph ph-file-text"></i> Edital Simplificado';
+            fetch(docUrl)
+                .then(response => response.text())
+                .then(text => {
+                    const notice = `<div class="ai-notice"><strong>Aviso:</strong> O edital simplificado, em markdown, foi resumido via IA especializada (Gemini 3.1 Pro) para fins de possibilitar a extração de dados estruturados para comparação dos processos.</div>`;
+                    contentDiv.innerHTML = notice + marked.parse(text);
+                })
+                .catch(err => {
+                    contentDiv.innerHTML = `<p style="color:red;">Erro ao carregar o arquivo markdown.</p>`;
+                });
+        }
+    }
+    function closePanel() {
+        document.getElementById('side-panel').classList.remove('open');
+        document.getElementById('main-content').classList.remove('shrunk');
+        setTimeout(() => { document.getElementById('panel-content').innerHTML = ''; }, 300);
+    }
+    
+              </script>
+
+  <script>
+    window.BASE_PATH = "../";
+    window.CITE_TXT = `PADOVANI, José H. Levantamento dos Processos Seletivos de PPG em Música 2025/2026: UFG. Disponível em: <a href='https://github.com/zepadovani/2026_modelos_selecao_pos' target='_blank'>https://github.com/zepadovani/2026_modelos_selecao_pos</a>. Acesso em: 17/03/2026.`;
+    window.CITE_BIB = `@misc{ppgmusselecao2026,
+  author = {Padovani, José Henrique},
+  title = {Levantamento dos Processos Seletivos de PPG em Música 2025/2026: UFG},
+  year = {2026},
+  url = {https://github.com/zepadovani/2026_modelos_selecao_pos},
+  note = {Acesso em: 17/03/2026}
+}`;
+    window.VERSION_STR = `0.17 (17/03/2026 18:49)`;
+  </script>
+  <script src="../common.js"></script>
+</head>
+
+<body>
+
+<div style="background: #f8f9fa; color: #888; padding: 4px 10px; font-size: 0.75rem; text-align: right; border-bottom: 1px solid #e0e0e0; font-family: monospace;">v0.17 • 17/03/2026 18:49</div>
+<div class="top-strip"></div>
+<div class="layout-wrapper">
+<div id="main-content">
+
+<div class="page-header">
+  <div class="home-nav">
+     <a href="../index.html" class="back-home" title="Voltar ao Índice">
+       <i class="ph ph-house"></i>
+     </a>
+  </div>
+  <img src="../assets/10-UFG.png" alt="Logo UFG" onerror="this.style.display='none'">
+  <div class="h-wrapper">
+    <div class="h_sigla_row">
+        <div class="h-sigla">UFG</div>
+        
+    </div>
+    <div class="h-prog">Programa de Pós-Graduação em Música (PPGMUS)</div>
+  </div>
+</div>
+
+<div class="kpi-row"><div class="kpi-card" style="border-top:3px solid #3273BA;background:#eef3f9"><i class="ph ph-users kpi-icon" style="color:#3273BA"></i><div class="kpi-label">Vagas totais</div><div class="kpi-value" style="color:#3273BA">22</div></div><div class="kpi-card" style="border-top:3px solid #3273BA;background:#eef3f9"><i class="ph ph-graduation-cap kpi-icon" style="color:#3273BA"></i><div class="kpi-label">Mestrado</div><div class="kpi-value" style="color:#3273BA">22</div></div><div class="kpi-card" style="border-top:3px solid #3273BA;background:#eef3f9"><i class="ph ph-graduation-cap kpi-icon" style="color:#3273BA"></i><div class="kpi-label">Doutorado</div><div class="kpi-value" style="color:#3273BA">–</div></div><div class="kpi-card" style="border-top:3px solid #3273BA;background:#eef3f9"><i class="ph ph-books kpi-icon" style="color:#3273BA"></i><div class="kpi-label">Linhas</div><div class="kpi-value" style="color:#3273BA">3</div></div><div class="kpi-card" style="border-top:3px solid #3273BA;background:#eef3f9"><i class="ph ph-percent kpi-icon" style="color:#3273BA"></i><div class="kpi-label">Cotas</div><div class="kpi-value" style="color:#3273BA">50.0%</div></div><div class="kpi-card" style="border-top:3px solid #3273BA;background:#eef3f9"><i class="ph ph-eye kpi-icon" style="color:#3273BA"></i><div class="kpi-label">Heteroident.</div><div class="kpi-value" style="color:#3273BA">Sim</div></div><div class="kpi-card" style="border-top:3px solid #3273BA;background:#eef3f9"><i class="ph ph-calendar kpi-icon" style="color:#3273BA"></i><div class="kpi-label">Ingresso</div><div class="kpi-value" style="color:#3273BA">2026/1</div></div><div class="kpi-card" style="border-top:3px solid #3273BA;background:#eef3f9"><i class="ph ph-map-pin kpi-icon" style="color:#3273BA"></i><div class="kpi-label">Modalidade</div><div class="kpi-value" style="color:#3273BA">Presencial</div></div></div>
+
+
+<div class="docs-bar">
+  <a href="javascript:void(0)" onclick="openPanel('pdf', '../../../editais/10-UFG - Edital_PPGMUS_2026_FINAL.pdf')" class="doc-link"><i class="ph ph-file-pdf"></i> Edital (PDF 1)</a><a href="javascript:void(0)" onclick="openPanel('pdf', '../../../editais/10-UFG - Edital_PPGMUS_2026_FINAL_quadro_docentes_linhas.pdf')" class="doc-link"><i class="ph ph-file-pdf"></i> Edital (PDF 2)</a><a href="javascript:void(0)" onclick="openPanel('md', '../../../editais_md_simplificados/10-UFG_simplificado.md')" class="doc-link"><i class="ph ph-file-text"></i> Edital Simplificado</a>
+</div>
+
+<div class="meta-bar">
+  <span><b>Modalidade:</b> H - Híbrido (alguma etapa presencial na sede)</span>
+  
+  <span><b>Linhas de Pesquisa:</b> Criação Musical: Performance, Composição e suas Interfaces (Linha A), Música: Práticas Epistêmicas, Discursivas e Formativas (Linha B), Neurociência da Música e Musicoterapia (Linha C)</span>
+  <span><b>Contato:</b> ppgmus.emac@gmail.com</span>
+  <span><b>Site:</b> <a href="https://ppgmus.emac.ufg.br/" target="_blank">https://ppgmus.emac.ufg.br/</a></span>
+  <span class="meta-refs">Edital 04/2025</span>
+</div>
+
+<div class="content">
+
+  <div class="legenda">
+    <span class="leg-item"><span class="leg-badge" style="background:#1565C0">S</span>Síncrono Remoto</span><span class="leg-item"><span class="leg-badge" style="background:#E65100">A</span>Assíncrono Remoto</span><span class="leg-item"><span class="leg-badge" style="background:#B71C1C">P</span>Presencial</span><span class="leg-item"><span class="leg-badge" style="background:#880E4F">FS</span>Presencial fora de sede</span><span class="leg-item"><span class="leg-badge" style="background:#546E7A">N</span>Não especificado</span>
+    <span class="leg-item"><span class="leg-pres"></span>Etapa presencial</span>
+  </div>
+
+  <div class="warn-pres"><i class="ph ph-warning"></i> Este processo tem <strong>etapas presenciais</strong></div>
+
+  <div class="sec-title"><i class="ph ph-list-bullets"></i> Linhas de Pesquisa e Etapas de Avaliação</div>
+  <div class="linha-card linha-pres">  <div class="linha-header" style="border-left:5px solid #3273BA">    <span class="nivel-badge" style="background:#1565C0">Mestrado</span>    <span class="linha-nome">Criação Musical: Performance, Composição e suas Interfaces (Linha A)</span>    <span class="pres-flag"><i class="ph ph-map-pin"></i> Presencial</span>    <div class="vagas-row"><span class="chip ac">AC: 6</span><span class="chip co">Cotas: 6</span><span class="chip pt">50.0%</span></div>  </div>  <div class="stages-row"><div class="stage-card" style="--sc:#3273BA;">  <span class="stage-badge" style="background:#E65100" title="Assíncrono Remoto">A</span>  <div class="stage-icon"><i class="ph ph-clipboard-text"></i></div>  <div class="stage-name">Avaliação do Pré-Projeto</div>  <div class="stage-insts"><span class="inst-tag">Projeto de Pesquisa</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="O pré-projeto deve ter no máximo 10 páginas e submetido via formulário sem identificação do candidato. A nota mínima exigida para aprovação na 1ª Etapa é 7,0. Esta avaliação, juntamente com a Avaliação de Vídeo ou Portfólio, compõe a 1ª Etapa do processo seletivo, que tem peso total de 40% na nota final. O peso individual desta avaliação é 20%, mas pode ser 40% se o candidato tiver foco estritamente teórico e não enviar vídeo/portfólio.">O pré-projeto deve ter no máximo 10 páginas e submetido via formulário sem identificação do candidato. A nota …</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#3273BA;">  <span class="stage-badge" style="background:#E65100" title="Assíncrono Remoto">A</span>  <div class="stage-icon"><i class="ph ph-music-notes-simple"></i></div>  <div class="stage-name">Avaliação de Vídeo ou Portfólio</div>  <div class="stage-insts"><span class="inst-tag">Prova Prática/Performance</span><span class="inst-tag">Portfólio</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Obrigatório para foco em Performance (envio de vídeo sem edição contendo no mínimo três obras contrastantes em plataforma digital) ou Composição (envio de portfólio em PDF com links de acesso a partituras, áudios, etc.). Esta avaliação, juntamente com a Avaliação do Pré-Projeto, compõe a 1ª Etapa do processo seletivo, que tem peso total de 40% na nota final. A nota final da 1ª Etapa é a média aritmética entre o Pré-Projeto e o Vídeo/Portfólio.">Obrigatório para foco em Performance (envio de vídeo sem edição contendo no mínimo três obras contrastantes em…</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#3273BA;">  <span class="stage-badge" style="background:#1565C0" title="Síncrono Remoto">S</span>  <div class="stage-icon"><i class="ph ph-chats-teardrop"></i></div>  <div class="stage-name">Avaliação Oral</div>  <div class="stage-insts"><span class="inst-tag">Entrevista/Arguição</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Realizada em ambiente virtual. Consiste na exposição (até 10 min) e arguição do projeto (10 min). Esta avaliação, juntamente com a Avaliação Escrita, compõe a 2ª Etapa do processo seletivo, que tem peso total de 40% na nota final e é calculada por meio de média aritmética entre as duas avaliações.">Realizada em ambiente virtual. Consiste na exposição (até 10 min) e arguição do projeto (10 min). Esta avaliaç…</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card stage-presencial" style="--sc:#3273BA;background:#FFEBEE;">  <span class="stage-badge" style="background:#B71C1C" title="Presencial">P</span>  <div class="stage-icon"><i class="ph ph-pencil-line"></i></div>  <div class="stage-name">Avaliação Escrita</div>  <div class="stage-insts"><span class="inst-tag">Prova Escrita</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Realizada presencialmente na Escola de Música e Artes Cênicas da UFG. Duração máxima de 3 horas. Baseada em textos da área de música, que serão apresentados no momento. Esta avaliação, juntamente com a Avaliação Oral, compõe a 2ª Etapa do processo seletivo, que tem peso total de 40% na nota final. A nota mínima de aprovação no conjunto da 2ª Etapa é 7,0.">Realizada presencialmente na Escola de Música e Artes Cênicas da UFG. Duração máxima de 3 horas. Baseada em te…</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#3273BA;">  <span class="stage-badge" style="background:#E65100" title="Assíncrono Remoto">A</span>  <div class="stage-icon"><i class="ph ph-identification-card"></i></div>  <div class="stage-name">Análise de Currículo</div>  <div class="stage-insts"><span class="inst-tag">Análise de Currículo</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Análise com base no Lattes (últimos 5 anos) mediante submissão de no máximo 10 comprovantes. Atribui-se a nota 10 (dez) ao candidato com maior pontuação bruta e aplica-se regra de três para os demais.">Análise com base no Lattes (últimos 5 anos) mediante submissão de no máximo 10 comprovantes. Atribui-se a nota…</div></div></div>  <p class="linha-detalhe">Distribuídas por orientadores específicos da linha. Obras ou pesquisas podem focar em Performance, Composição ou abordagens de cariz teórico associadas à criação.</p></div>
+<div class="linha-card linha-pres">  <div class="linha-header" style="border-left:5px solid #3273BA">    <span class="nivel-badge" style="background:#1565C0">Mestrado</span>    <span class="linha-nome">Música: Práticas Epistêmicas, Discursivas e Formativas (Linha B)</span>    <span class="pres-flag"><i class="ph ph-map-pin"></i> Presencial</span>    <div class="vagas-row"><span class="chip ac">AC: 3</span><span class="chip co">Cotas: 3</span><span class="chip pt">50.0%</span></div>  </div>  <div class="stages-row"><div class="stage-card" style="--sc:#3273BA;">  <span class="stage-badge" style="background:#E65100" title="Assíncrono Remoto">A</span>  <div class="stage-icon"><i class="ph ph-clipboard-text"></i></div>  <div class="stage-name">Avaliação do Pré-Projeto</div>  <div class="stage-insts"><span class="inst-tag">Projeto de Pesquisa</span></div>  <div class="stage-peso">40%</div>  <div class="stage-obs" title="Máximo de 10 páginas, submetido sem a identificação do candidato. Nota mínima 7,0. Esta avaliação constitui a 1ª Etapa do processo seletivo nesta linha, com peso de 40% na nota final.">Máximo de 10 páginas, submetido sem a identificação do candidato. Nota mínima 7,0. Esta avaliação constitui a …</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#3273BA;">  <span class="stage-badge" style="background:#1565C0" title="Síncrono Remoto">S</span>  <div class="stage-icon"><i class="ph ph-chats-teardrop"></i></div>  <div class="stage-name">Avaliação Oral</div>  <div class="stage-insts"><span class="inst-tag">Entrevista/Arguição</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Arguição online do pré-projeto, num limite de tempo de 20 minutos. Esta avaliação, juntamente com a Avaliação Escrita, compõe a 2ª Etapa do processo seletivo, que globalmente pesa 40% na nota final e é calculada por meio de média aritmética entre as duas avaliações.">Arguição online do pré-projeto, num limite de tempo de 20 minutos. Esta avaliação, juntamente com a Avaliação …</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card stage-presencial" style="--sc:#3273BA;background:#FFEBEE;">  <span class="stage-badge" style="background:#B71C1C" title="Presencial">P</span>  <div class="stage-icon"><i class="ph ph-pencil-line"></i></div>  <div class="stage-name">Avaliação Escrita</div>  <div class="stage-insts"><span class="inst-tag">Prova Escrita</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Duração de 3 horas, aplicada de modo presencial na Instituição, com a interpretação de textos da área. Esta avaliação, juntamente com a Avaliação Oral, compõe a 2ª Etapa do processo seletivo, que globalmente pesa 40% na nota final. O conjunto da 2ª etapa tem nota mínima 7,0.">Duração de 3 horas, aplicada de modo presencial na Instituição, com a interpretação de textos da área. Esta av…</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#3273BA;">  <span class="stage-badge" style="background:#E65100" title="Assíncrono Remoto">A</span>  <div class="stage-icon"><i class="ph ph-identification-card"></i></div>  <div class="stage-name">Análise de Currículo</div>  <div class="stage-insts"><span class="inst-tag">Análise de Currículo</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Análise Lattes correspondente aos últimos 5 anos. Limite máximo de 10 comprovativos submetidos. É pontuada de forma proporcional (regra de três) perante a nota mais alta (que aufere um 10).">Análise Lattes correspondente aos últimos 5 anos. Limite máximo de 10 comprovativos submetidos. É pontuada de …</div></div></div>  <p class="linha-detalhe">Vagas distribuídas pelos respetivos docentes e focos de pesquisa da linha (Etnomusicologia, Educação Musical, História, etc.).</p></div>
+<div class="linha-card linha-pres">  <div class="linha-header" style="border-left:5px solid #3273BA">    <span class="nivel-badge" style="background:#1565C0">Mestrado</span>    <span class="linha-nome">Neurociência da Música e Musicoterapia (Linha C)</span>    <span class="pres-flag"><i class="ph ph-map-pin"></i> Presencial</span>    <div class="vagas-row"><span class="chip ac">AC: 2</span><span class="chip co">Cotas: 2</span><span class="chip pt">50.0%</span></div>  </div>  <div class="stages-row"><div class="stage-card" style="--sc:#3273BA;">  <span class="stage-badge" style="background:#E65100" title="Assíncrono Remoto">A</span>  <div class="stage-icon"><i class="ph ph-clipboard-text"></i></div>  <div class="stage-name">Avaliação do Pré-Projeto</div>  <div class="stage-insts"><span class="inst-tag">Projeto de Pesquisa</span></div>  <div class="stage-peso">40%</div>  <div class="stage-obs" title="Extensão máxima de 10 páginas, envio anónimo. É exigida a nota mínima de 7,0 para transição às etapas seguintes. Esta avaliação constitui a 1ª Etapa do processo seletivo nesta linha, com peso de 40% na nota final.">Extensão máxima de 10 páginas, envio anónimo. É exigida a nota mínima de 7,0 para transição às etapas seguinte…</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#3273BA;">  <span class="stage-badge" style="background:#1565C0" title="Síncrono Remoto">S</span>  <div class="stage-icon"><i class="ph ph-chats-teardrop"></i></div>  <div class="stage-name">Avaliação Oral</div>  <div class="stage-insts"><span class="inst-tag">Entrevista/Arguição</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Sessão virtual de 20 minutos (10 de apresentação, 10 de arguição). Esta avaliação, juntamente com a prova escrita, compõe a 2ª Etapa do processo seletivo, que tem peso total de 40% na Nota Final e é calculada por meio de média aritmética entre as duas avaliações.">Sessão virtual de 20 minutos (10 de apresentação, 10 de arguição). Esta avaliação, juntamente com a prova escr…</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card stage-presencial" style="--sc:#3273BA;background:#FFEBEE;">  <span class="stage-badge" style="background:#B71C1C" title="Presencial">P</span>  <div class="stage-icon"><i class="ph ph-pencil-line"></i></div>  <div class="stage-name">Avaliação Escrita</div>  <div class="stage-insts"><span class="inst-tag">Prova Escrita</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Elaboração de texto de cariz académico a partir de bibliografia e leitura sugerida no dia. Presencial (3 horas). Esta avaliação, juntamente com a Avaliação Oral, compõe a 2ª Etapa do processo seletivo, que tem peso total de 40% na Nota Final. Mínimo de 7,0 de nota final na soma global da Etapa.">Elaboração de texto de cariz académico a partir de bibliografia e leitura sugerida no dia. Presencial (3 horas…</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#3273BA;">  <span class="stage-badge" style="background:#E65100" title="Assíncrono Remoto">A</span>  <div class="stage-icon"><i class="ph ph-identification-card"></i></div>  <div class="stage-name">Análise de Currículo</div>  <div class="stage-insts"><span class="inst-tag">Análise de Currículo</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Validação Lattes via máximo de 10 comprovantes dos últimos 5 anos. Nota estipulada em percentil face ao candidato com maior avaliação na etapa.">Validação Lattes via máximo de 10 comprovantes dos últimos 5 anos. Nota estipulada em percentil face ao candid…</div></div></div>  <p class="linha-detalhe">Vagas alocadas conforme as orientações vigentes na área e os respetivos professores responsáveis.</p></div>
+
+  <div class="sec-title" style="margin-top:16px"><i class="ph ph-translate"></i> Proficiência em idiomas</div><div class="prof-box">Exige a entrega obrigatória de um Certificado de Suficiência em Língua Inglesa ou Espanhola (TOEFL, IELTS, MET, CASLE, etc., com validade até 5 anos) até a data de 10/03/2026. Não há prova de idiomas aplicada pelo Programa (exceto as geridas pela própria universidade globalmente). Candidatos estrangeiros de língua inglesa estão dispensados de Inglês, mas devem apresentar certificado em Português (CELPE-BRAS ou CASLE). Trata-se de etapa eliminatória para a matrícula.</div>
+
+</div>
+
+<div class="app-footer">
+  Estudo de Modelos de Seleção/PPGs Música - 2025/2026
+  <div class="app-version">v0.17 (17/03/2026 18:49)</div>
+  <br>
+  <button class="cite-btn" onclick="showCite()"><i class="ph ph-quotes"></i> Como citar</button>
+  <br><br>
+  <a href="../metodologia.html" style="color:inherit">Metodologia</a>
+</div>
+
+</div> <!-- main-content -->
+
+<div id="side-panel">
+  <div id="panel-header">
+    <h3 id="panel-title">Documento</h3>
+    <button class="close-btn" onclick="closePanel()" title="Fechar"><i class="ph ph-x"></i></button>
+  </div>
+  <div id="panel-content"></div>
+</div>
+
+</div> <!-- layout-wrapper -->
+
+
+
+</body>
+</html>

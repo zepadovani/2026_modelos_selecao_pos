@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Estudo transversal de modelos de seleção em PPGs Acadêmicos da área de Música - 2025-26</title>
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #F4F4F5; color: #1A1A1A; line-height: 1.45;
+      padding: 0; margin: 0;
+    }
+    .container { width: 100%; max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    @media (min-width: 1024px) { .container { max-width: 80%; } }
+    h1 { font-size: 2rem; margin-bottom: 20px; color: #333; }
+    
+    .section-title {
+      font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;
+      color: #555; margin-top: 40px; margin-bottom: 20px;
+      border-bottom: 1px solid #ddd; padding-bottom: 10px;
+    }
+
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .index-card {
+      background: #fff; border-radius: 12px;
+      text-decoration: none; display: flex; flex-direction: column; 
+      overflow: hidden; position: relative;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .index-card:hover { transform: translateY(-4px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+
+    .card-bar { height: 6px; width: 100%; }
+    .card-content { padding: 16px; flex: 1; }
+    .sigla { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+    .desc { font-size: 0.85rem; color: #888; }
+    
+    .card-arrow {
+      position: absolute; bottom: 12px; right: 12px;
+      color: #ddd; font-size: 1.2rem;
+    }
+    .index-card:hover .card-arrow { color: #333; }
+
+    .disclaimer-box { background: #fff3cd; color: #856404; padding: 16px; margin-bottom: 30px; border-radius: 8px; border: 1px solid #ffeeba; font-size: 0.95rem; line-height: 1.5; }
+
+    .fixed-author { position: fixed; bottom: 10px; right: 10px; font-size: 0.75rem; color: #888; text-align: right; z-index: 9999; background: rgba(255,255,255,0.85); padding: 4px 8px; border-radius: 4px; pointer-events: auto; }
+    .fixed-author a { color: #888; text-decoration: underline; }
+    .fixed-author a:hover { color: #555; }
+</style>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.BASE_PATH = "";
+    window.CITE_TXT = `PADOVANI, José H. Levantamento dos Processos Seletivos de PPG em Música 2025/2026. Disponível em: <a href='https://github.com/zepadovani/2026_modelos_selecao_pos' target='_blank'>https://github.com/zepadovani/2026_modelos_selecao_pos</a>. Acesso em: 17/03/2026.`;
+    window.CITE_BIB = `@misc{ppgmusselecao2026_geral,
+  author = {Padovani, José Henrique},
+  title = {Levantamento dos Processos Seletivos de PPG em Música 2025/2026},
+  year = {2026},
+  url = {https://github.com/zepadovani/2026_modelos_selecao_pos},
+  note = {Acesso em: 17/03/2026}
+}`;
+    window.VERSION_STR = `0.17 (17/03/2026 18:49)`;
+  </script>
+  <script src="common.js"></script>
+</head>
+
+<body>
+
+<div style="background: #f8f9fa; color: #888; padding: 4px 10px; font-size: 0.75rem; text-align: right; border-bottom: 1px solid #e0e0e0; font-family: monospace;">v0.17 • 17/03/2026 18:49</div>
+
+<div class="container">
+  <h1>Estudo transversal de modelos de seleção em PPGs Acadêmicos da área de Música - 2025-26</h1>
+
+  
+  <div class="disclaimer-box">
+    <strong>Aviso Importante:</strong> Os dados apresentados neste site foram extraídos de editais originais que passaram por um processo de simplificação utilizando Inteligência Artificial (Gemini), com o objetivo de estruturar as informações e permitir a comparação entre diferentes programas. Devido à natureza automatizada desse processo, <strong>os dados podem conter imprecisões ou omissões</strong>. Para informações oficiais e detalhes completos sobre qualquer processo seletivo, recomenda-se fortemente a consulta ao edital original da respectiva instituição.
+  </div>
+
+  <div class="section-title" id="sobre">1. Sobre o Estudo</div>
+  <div class="sobre-content" style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+    <h3 style="margin-bottom: 10px; color: #333;">Objetivos</h3>
+    <p style="margin-bottom: 20px; color: #555; line-height: 1.6;">Este estudo visa mapear e comparar os processos seletivos dos Programas de Pós-Graduação Acadêmicos em Música no Brasil para o biênio 2025-2026, oferecendo uma visão estruturada sobre linhas de pesquisa, vagas, cotas e modalidades de avaliação.</p>
+
+    <h3 style="margin-bottom: 10px; color: #333;">Metodologia</h3>
+    <p style="margin-bottom: 20px; color: #555; line-height: 1.6;">Esse estudo foi realizado a partir da simplificação e estruturação de dados de editais publicados entres os anos de 2024 e 2026. O processo de extração utilizou modelos de Inteligência Artificial (Gemini 3.1 Pro para simplificação do texto e Gemini 2.5 Flash para extração de dados estruturados em JSON).</p>
+    <p style="margin-bottom: 20px; color: #555; line-height: 1.6;"><strong>Aviso:</strong> Devido à natureza automatizada do processo de extração, os dados podem apresentar inconsistências ou omissões pontuais, o que poderá ser corrigido em versões posteriores. O estudo será atualizado regularmente; recomenda-se atenção à versão e à data/horário de publicação do painel (atualizados automaticamente a cada execução).</p>
+
+    <h3 style="margin-bottom: 10px; color: #333;">Materiais de referência</h3>
+    <ul style="margin-left: 20px; color: #555; line-height: 1.6; font-size: 0.9rem;">
+        <li><strong>UFMG</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital Regular nº 154/2026; Edital Suplementar nº 155/2026</li><li><strong>UNICAMP</strong> (Programa de Pós-Graduação em Música): EDITAL PPG-MÚSICA 001/2025</li><li><strong>UFRGS</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital Seleção 2026 Doutorado em Música; Edital Seleção 2026 Mestrado em Música</li><li><strong>USP</strong> (Programa de Pós-Graduação em Música (PPGMUS)): PROCESSO DE SELEÇÃO PARA INGRESSO DE ALUNOS(AS) REGULARES - PPGMUS 2026</li><li><strong>UFPB</strong> (Programa de Pós-Graduação em Música (PPGM)): EDITAL PPGM 02/2026 (Mestrado); EDITAL PPGM 03/2026 (Doutorado)</li><li><strong>UFRJ</strong> (Programa de Pós-Graduação em Música (PPGM)): Edital Nº 552 (Mestrado); Edital Nº 553 (Doutorado)</li><li><strong>UNIRIO</strong> (Programa de Pós-Graduação em Música (PPGM)): Edital N° 01/2025</li><li><strong>UDESC</strong> (Programa de Pós-Graduação em Música - PPGMUS): EDITAL CEART N° 053/2025 - PPGMUS</li><li><strong>UFBA</strong> (Programa de Pós-Graduação em Música (PPGMUS)): EDITAL n.º 02/2025</li><li><strong>UFG</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital 04/2025</li><li><strong>UFPR</strong> (Programa de Pós-Graduação em Música (PPGMúsica)): Edital n. 08/2025</li><li><strong>UNESPAR</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital 13/2024</li><li><strong>UFSJ</strong> (Programa de Pós-Graduação em Música (PPGMUSI)): EDITAL PPGMUSI/UFSJ Nº 004/2025</li><li><strong>UFU</strong> (Programa de Pós-Graduação em Música (PPGMU)): EDITAL PPGMU Nº 5/2025</li><li><strong>UEPA</strong> (Programa de Pós-Graduação em Música na Amazônia (PPGMUSA)): EDITAL N°091/2025-UEPA</li><li><strong>UEM</strong> (Programa de Pós-Graduação em Música (PMU)): EDITAL N° 025/2025 - PMU</li><li><strong>UFPE</strong> (Programa de Pós-Graduação em Música (PPGMúsica)): Edital nº 01/2024</li><li><strong>UNESP</strong> (Programa de Pós-Graduação em Música (PPG Música)): PROCESSO SELETIVO ALUNO REGULAR - INGRESSO 2026 (SELEÇÃO PARA MESTRADO E DOUTORADO - PPG MÚSICA)</li><li><strong>UFRN</strong> (Programa de Pós-Graduação em Música (PPGMus)): EDITAL 001/2025</li><li><strong>UNB</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital Nº 03/2025</li>
+    </ul>
+  </div>
+
+  <div class="section-title" style="margin-top: 50px;">2. Visão detalhada</div>
+  <div class="grid">
+    
+        <a href="1_detalhado/01-UFMG.html" class="index-card" style="background-color: #f6dbdf; border: 1px solid #C8102E33; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/01-UFMG.png" alt="Logo UFMG" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/02-UNICAMP.html" class="index-card" style="background-color: #e9dff5; border: 1px solid #6F2DBD33; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/02-UNICAMP.png" alt="Logo UNICAMP" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/03-UFRGS.html" class="index-card" style="background-color: #f9e3e2; border: 1px solid #DA454033; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/03-UFRGS.png" alt="Logo UFRGS" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/04-USP.html" class="index-card" style="background-color: #d8e0e8; border: 1px solid #00336633; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/04-USP.png" alt="Logo USP" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/05-UFPB.html" class="index-card" style="background-color: #e1ecfd; border: 1px solid #3B85F233; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/05-UFPB.png" alt="Logo UFPB" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/06-UFRJ.html" class="index-card" style="background-color: #dbe0e7; border: 1px solid #11326333; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/06-UFRJ.png" alt="Logo UFRJ" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/07-UNIRIO.html" class="index-card" style="background-color: #e0eaf5; border: 1px solid #3579BD33; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/07-UNIRIO.png" alt="Logo UNIRIO" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/08-UDESC.html" class="index-card" style="background-color: #e6ede5; border: 1px solid #5D8C5533; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/08-UDESC.png" alt="Logo UDESC" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/09-UFBA.html" class="index-card" style="background-color: #e7e7ef; border: 1px solid #5F629733; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/09-UFBA.png" alt="Logo UFBA" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/10-UFG.html" class="index-card" style="background-color: #e0eaf4; border: 1px solid #3273BA33; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/10-UFG.png" alt="Logo UFG" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/11-UFPR.html" class="index-card" style="background-color: #dfe7ee; border: 1px solid #2C5F9233; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/11-UFPR.png" alt="Logo UFPR" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/12-UNESPAR.html" class="index-card" style="background-color: #d8f0dc; border: 1px solid #009F1933; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/12-UNESPAR.png" alt="Logo UNESPAR" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/13-UFSJ.html" class="index-card" style="background-color: #f3e2e2; border: 1px solid #B3444333; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/13-UFSJ.png" alt="Logo UFSJ" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/14-UFU.html" class="index-card" style="background-color: #e1e1ea; border: 1px solid #39377333; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/14-UFU.png" alt="Logo UFU" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/15-UEPA.html" class="index-card" style="background-color: #e6e5f0; border: 1px solid #5B589C33; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/15-UEPA.png" alt="Logo UEPA" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/16-UEM.html" class="index-card" style="background-color: #f9e3e2; border: 1px solid #DA454033; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/16-UEM.png" alt="Logo UEM" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/17-UFPE.html" class="index-card" style="background-color: #f1dde1; border: 1px solid #A7223C33; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/17-UFPE.png" alt="Logo UFPE" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/18-UNESP.html" class="index-card" style="background-color: #d8eef9; border: 1px solid #0093DD33; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/18-UNESP.png" alt="Logo UNESP" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/19-UFRN.html" class="index-card" style="background-color: #e2eef8; border: 1px solid #4192D333; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/19-UFRN.png" alt="Logo UFRN" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+        <a href="1_detalhado/20-UNB.html" class="index-card" style="background-color: #e0eade; border: 1px solid #32742733; border-radius: 16px;">
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
+                <img src="assets/20-UNB.png" alt="Logo UNB" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
+            </div>
+        </a>
+        
+  </div>
+
+  <div class="section-title" style="margin-top: 50px;">3. Comparativo Geral</div>
+  <div class="grid">
+    <a href="2_geral/index.html" class="index-card">
+        <div class="card-bar" style="background-color: #333"></div>
+        <div class="card-content">
+            <div class="sigla" style="color: #333"><i class="ph ph-table"></i> Quadro Resumo</div>
+            <div class="desc">Comparar todos os PPGs</div>
+        </div>
+        <div class="card-arrow"><i class="ph ph-arrow-right"></i></div>
+    </a>
+  </div>
+</div>
+
+
+
+</body>
+</html>

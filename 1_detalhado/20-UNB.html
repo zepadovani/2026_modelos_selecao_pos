@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UNB — PPG Música</title>
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    :root { --c: #327427; --cl: #eef3ed; }
+    body { display: flex; flex-direction: column; margin: 0; padding: 0; min-height: 100vh; overflow-x: hidden; }
+    .layout-wrapper { display: flex; flex: 1; width: 100%; transition: all 0.3s ease; }
+    #main-content { flex: 1; transition: flex 0.3s ease; width: 100%; padding-bottom: 40px; }
+    #side-panel { width: 0; overflow: hidden; transition: width 0.3s ease; background: #fff; border-left: 1px solid #ccc; display: flex; flex-direction: column; }
+    #side-panel.open { width: 50%; }
+    #main-content.shrunk { width: 50%; flex: none; }
+    #panel-header { padding: 10px 15px; background: #f8f9fa; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #dee2e6; }
+    #panel-header h3 { margin: 0; font-size: 1.1rem; color: #333; }
+    #panel-content { flex: 1; overflow-y: auto; padding: 20px; font-size: 0.95rem; line-height: 1.6; color: #333; }
+    .close-btn { cursor: pointer; background: none; border: none; font-size: 1.5rem; color: #666; transition: color 0.2s; }
+    .close-btn:hover { color: #000; }
+    .ai-notice { background: #fff3cd; color: #856404; padding: 12px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ffeeba; font-size: 0.9rem; line-height: 1.4; }
+    .docs-bar { padding: 10px 20px; background: #fff; border-bottom: 1px solid #eee; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .doc-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f0f0f0; border-radius: 20px; text-decoration: none; color: #333; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+    .doc-link:hover { background: #e0e0e0; }
+  </style>
+  
+        <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft' && '19-UFRN.html') {
+                window.location.href = '19-UFRN.html';
+            } else if (event.key === 'ArrowRight' && '') {
+                window.location.href = '';
+            }
+        });
+        </script>
+        
+  <script>
+    function openPanel(type, docUrl) {
+        document.getElementById('side-panel').classList.add('open');
+        document.getElementById('main-content').classList.add('shrunk');
+        const contentDiv = document.getElementById('panel-content');
+        const headerTitle = document.getElementById('panel-title');
+
+        if (type === 'pdf') {
+            headerTitle.innerHTML = '<i class="ph ph-file-pdf"></i> Edital Original (PDF)';
+            contentDiv.innerHTML = `<iframe src="${docUrl}" width="100%" height="100%" style="border:none; min-height: 80vh;"></iframe>`;
+        } else if (type === 'md') {
+            headerTitle.innerHTML = '<i class="ph ph-file-text"></i> Edital Simplificado';
+            fetch(docUrl)
+                .then(response => response.text())
+                .then(text => {
+                    const notice = `<div class="ai-notice"><strong>Aviso:</strong> O edital simplificado, em markdown, foi resumido via IA especializada (Gemini 3.1 Pro) para fins de possibilitar a extração de dados estruturados para comparação dos processos.</div>`;
+                    contentDiv.innerHTML = notice + marked.parse(text);
+                })
+                .catch(err => {
+                    contentDiv.innerHTML = `<p style="color:red;">Erro ao carregar o arquivo markdown.</p>`;
+                });
+        }
+    }
+    function closePanel() {
+        document.getElementById('side-panel').classList.remove('open');
+        document.getElementById('main-content').classList.remove('shrunk');
+        setTimeout(() => { document.getElementById('panel-content').innerHTML = ''; }, 300);
+    }
+    
+              </script>
+
+  <script>
+    window.BASE_PATH = "../";
+    window.CITE_TXT = `PADOVANI, José H. Levantamento dos Processos Seletivos de PPG em Música 2025/2026: UNB. Disponível em: <a href='https://github.com/zepadovani/2026_modelos_selecao_pos' target='_blank'>https://github.com/zepadovani/2026_modelos_selecao_pos</a>. Acesso em: 17/03/2026.`;
+    window.CITE_BIB = `@misc{ppgmusselecao2026,
+  author = {Padovani, José Henrique},
+  title = {Levantamento dos Processos Seletivos de PPG em Música 2025/2026: UNB},
+  year = {2026},
+  url = {https://github.com/zepadovani/2026_modelos_selecao_pos},
+  note = {Acesso em: 17/03/2026}
+}`;
+    window.VERSION_STR = `0.17 (17/03/2026 18:49)`;
+  </script>
+  <script src="../common.js"></script>
+</head>
+
+<body>
+
+<div style="background: #f8f9fa; color: #888; padding: 4px 10px; font-size: 0.75rem; text-align: right; border-bottom: 1px solid #e0e0e0; font-family: monospace;">v0.17 • 17/03/2026 18:49</div>
+<div class="top-strip"></div>
+<div class="layout-wrapper">
+<div id="main-content">
+
+<div class="page-header">
+  <div class="home-nav">
+     <a href="../index.html" class="back-home" title="Voltar ao Índice">
+       <i class="ph ph-house"></i>
+     </a>
+  </div>
+  <img src="../assets/20-UNB.png" alt="Logo UNB" onerror="this.style.display='none'">
+  <div class="h-wrapper">
+    <div class="h_sigla_row">
+        <div class="h-sigla">UNB</div>
+        
+    </div>
+    <div class="h-prog">Programa de Pós-Graduação em Música (PPGMUS)</div>
+  </div>
+</div>
+
+<div class="kpi-row"><div class="kpi-card" style="border-top:3px solid #327427;background:#eef3ed"><i class="ph ph-users kpi-icon" style="color:#327427"></i><div class="kpi-label">Vagas totais</div><div class="kpi-value" style="color:#327427">29</div></div><div class="kpi-card" style="border-top:3px solid #327427;background:#eef3ed"><i class="ph ph-graduation-cap kpi-icon" style="color:#327427"></i><div class="kpi-label">Mestrado</div><div class="kpi-value" style="color:#327427">18</div></div><div class="kpi-card" style="border-top:3px solid #327427;background:#eef3ed"><i class="ph ph-graduation-cap kpi-icon" style="color:#327427"></i><div class="kpi-label">Doutorado</div><div class="kpi-value" style="color:#327427">11</div></div><div class="kpi-card" style="border-top:3px solid #327427;background:#eef3ed"><i class="ph ph-books kpi-icon" style="color:#327427"></i><div class="kpi-label">Linhas</div><div class="kpi-value" style="color:#327427">2</div></div><div class="kpi-card" style="border-top:3px solid #327427;background:#eef3ed"><i class="ph ph-percent kpi-icon" style="color:#327427"></i><div class="kpi-label">Cotas</div><div class="kpi-value" style="color:#327427">37.9%</div></div><div class="kpi-card" style="border-top:3px solid #327427;background:#eef3ed"><i class="ph ph-eye kpi-icon" style="color:#327427"></i><div class="kpi-label">Heteroident.</div><div class="kpi-value" style="color:#327427">Sim</div></div><div class="kpi-card" style="border-top:3px solid #327427;background:#eef3ed"><i class="ph ph-calendar kpi-icon" style="color:#327427"></i><div class="kpi-label">Ingresso</div><div class="kpi-value" style="color:#327427">2025/2</div></div><div class="kpi-card" style="border-top:3px solid #327427;background:#eef3ed"><i class="ph ph-globe kpi-icon" style="color:#327427"></i><div class="kpi-label">Modalidade</div><div class="kpi-value" style="color:#327427">100% Remoto</div></div></div>
+
+
+<div class="docs-bar">
+  <a href="javascript:void(0)" onclick="openPanel('pdf', '../../../editais/20-UnB_2025_PPGMUS.pdf')" class="doc-link"><i class="ph ph-file-pdf"></i> Edital (PDF)</a><a href="javascript:void(0)" onclick="openPanel('md', '../../../editais_md_simplificados/20-UNB_simplificado.md')" class="doc-link"><i class="ph ph-file-text"></i> Edital Simplificado</a>
+</div>
+
+<div class="meta-bar">
+  <span><b>Modalidade:</b> R - 100% Remoto</span>
+  
+  <span><b>Linhas de Pesquisa:</b> Processos de Criação em Música (Linha A), Processos de Formação em Música (Linha B)</span>
+  <span><b>Contato:</b> musicappg@unb.br</span>
+  <span><b>Site:</b> <a href="http://ppgmmus.unb.br" target="_blank">http://ppgmmus.unb.br</a></span>
+  <span class="meta-refs">Edital Nº 03/2025</span>
+</div>
+
+<div class="content">
+
+  <div class="legenda">
+    <span class="leg-item"><span class="leg-badge" style="background:#1565C0">S</span>Síncrono Remoto</span><span class="leg-item"><span class="leg-badge" style="background:#E65100">A</span>Assíncrono Remoto</span><span class="leg-item"><span class="leg-badge" style="background:#B71C1C">P</span>Presencial</span><span class="leg-item"><span class="leg-badge" style="background:#880E4F">FS</span>Presencial fora de sede</span><span class="leg-item"><span class="leg-badge" style="background:#546E7A">N</span>Não especificado</span>
+    <span class="leg-item"><span class="leg-pres"></span>Etapa presencial</span>
+  </div>
+
+  
+
+  <div class="sec-title"><i class="ph ph-list-bullets"></i> Linhas de Pesquisa e Etapas de Avaliação</div>
+  <div class="linha-card">  <div class="linha-header" style="border-left:5px solid #327427">    <span class="nivel-badge" style="background:#1565C0">Mestrado</span>    <span class="linha-nome">Regras Gerais</span>        <div class="vagas-row"><span class="chip ac">AC: 12</span><span class="chip co">Cotas: 6</span><span class="chip pt">33.3%</span></div>  </div>  <div class="stages-row"><div class="stage-card" style="--sc:#327427;">  <span class="stage-badge" style="background:#E65100" title="Assíncrono Remoto">A</span>  <div class="stage-icon"><i class="ph ph-clipboard-text"></i></div>  <div class="stage-name">Avaliação do Pré-Projeto</div>  <div class="stage-insts"><span class="inst-tag">Projeto de Pesquisa</span></div>  <div class="stage-peso">40%</div>  <div class="stage-obs" title="O pré-projeto deve ter de 10 a 15 páginas, seguir normas ABNT e será avaliado quanto à adequação, consistência, metodologia e viabilidade. A nota mínima para aprovação é 7,0.">O pré-projeto deve ter de 10 a 15 páginas, seguir normas ABNT e será avaliado quanto à adequação, consistência…</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#327427;">  <span class="stage-badge" style="background:#1565C0" title="Síncrono Remoto">S</span>  <div class="stage-icon"><i class="ph ph-pencil-line"></i></div>  <div class="stage-name">Prova Escrita de Conteúdo</div>  <div class="stage-insts"><span class="inst-tag">Prova Escrita</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Duração máxima de 2 horas via Microsoft Teams, sem consulta, escrita à mão. Câmera e microfone devem ficar ligados. Identificação exclusiva pelo CPF, nota mínima 7,0.">Duração máxima de 2 horas via Microsoft Teams, sem consulta, escrita à mão. Câmera e microfone devem ficar lig…</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#327427;">  <span class="stage-badge" style="background:#1565C0" title="Síncrono Remoto">S</span>  <div class="stage-icon"><i class="ph ph-chats-teardrop"></i></div>  <div class="stage-name">Prova Oral</div>  <div class="stage-insts"><span class="inst-tag">Entrevista/Arguição</span></div>  <div class="stage-peso">40%</div>  <div class="stage-obs" title="Duração de até 30 minutos via Microsoft Teams. Arguição sobre o projeto, currículo, prova escrita e disponibilidade. Nota mínima 7,0.">Duração de até 30 minutos via Microsoft Teams. Arguição sobre o projeto, currículo, prova escrita e disponibil…</div></div></div>  <p class="linha-detalhe">Distribuídas conforme as opções dos aprovados e disponibilidade dos orientadores listados no Anexo I.</p></div>
+<div class="linha-card">  <div class="linha-header" style="border-left:5px solid #327427">    <span class="nivel-badge" style="background:#6A1B9A">Doutorado</span>    <span class="linha-nome">Regras Gerais</span>        <div class="vagas-row"><span class="chip ac">AC: 6</span><span class="chip co">Cotas: 5</span><span class="chip pt">45.5%</span></div>  </div>  <div class="stages-row"><div class="stage-card" style="--sc:#327427;">  <span class="stage-badge" style="background:#E65100" title="Assíncrono Remoto">A</span>  <div class="stage-icon"><i class="ph ph-clipboard-text"></i></div>  <div class="stage-name">Avaliação do Pré-Projeto</div>  <div class="stage-insts"><span class="inst-tag">Projeto de Pesquisa</span></div>  <div class="stage-peso">40%</div>  <div class="stage-obs" title="Deve ter de 10 a 15 páginas, seguir normas ABNT e abordará tema, justificativa e metodologia. Nota mínima 7,0.">Deve ter de 10 a 15 páginas, seguir normas ABNT e abordará tema, justificativa e metodologia. Nota mínima 7,0.</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#327427;">  <span class="stage-badge" style="background:#1565C0" title="Síncrono Remoto">S</span>  <div class="stage-icon"><i class="ph ph-pencil-line"></i></div>  <div class="stage-name">Prova Escrita de Conteúdo</div>  <div class="stage-insts"><span class="inst-tag">Prova Escrita</span></div>  <div class="stage-peso">20%</div>  <div class="stage-obs" title="Duração de 2 horas via Microsoft Teams, escrita à mão e sem identificação nominal (apenas CPF). Exige-se câmera/microfone ligados e envio de foto legível da prova ao término. Nota mínima 7,0.">Duração de 2 horas via Microsoft Teams, escrita à mão e sem identificação nominal (apenas CPF). Exige-se câmer…</div></div><div class="stage-arrow"><i class="ph ph-arrow-right"></i></div><div class="stage-card" style="--sc:#327427;">  <span class="stage-badge" style="background:#1565C0" title="Síncrono Remoto">S</span>  <div class="stage-icon"><i class="ph ph-chats-teardrop"></i></div>  <div class="stage-name">Prova Oral</div>  <div class="stage-insts"><span class="inst-tag">Entrevista/Arguição</span></div>  <div class="stage-peso">40%</div>  <div class="stage-obs" title="Duração de até 45 minutos via plataforma Teams. Arguição com a banca examinadora sobre o projeto, prova escrita, currículo e experiência. A sessão será gravada. Nota mínima 7,0.">Duração de até 45 minutos via plataforma Teams. Arguição com a banca examinadora sobre o projeto, prova escrit…</div></div></div>  <p class="linha-detalhe">Distribuídas conforme as opções dos aprovados e disponibilidade dos orientadores listados no Anexo I.</p></div>
+
+  <div class="sec-title" style="margin-top:16px"><i class="ph ph-translate"></i> Proficiência em idiomas</div><div class="prof-box">A certificação pode ser apresentada no ato da inscrição ou preferencialmente na matrícula, tendo como limite o exame de qualificação. Para o Mestrado, exige-se proficiência em Inglês. Para o Doutorado, exige-se proficiência em idioma diferente do Inglês (Espanhol, Francês, Alemão ou Italiano). Não é etapa avaliativa eliminatória imediata do certame, mas obrigação curricular.</div>
+
+</div>
+
+<div class="app-footer">
+  Estudo de Modelos de Seleção/PPGs Música - 2025/2026
+  <div class="app-version">v0.17 (17/03/2026 18:49)</div>
+  <br>
+  <button class="cite-btn" onclick="showCite()"><i class="ph ph-quotes"></i> Como citar</button>
+  <br><br>
+  <a href="../metodologia.html" style="color:inherit">Metodologia</a>
+</div>
+
+</div> <!-- main-content -->
+
+<div id="side-panel">
+  <div id="panel-header">
+    <h3 id="panel-title">Documento</h3>
+    <button class="close-btn" onclick="closePanel()" title="Fechar"><i class="ph ph-x"></i></button>
+  </div>
+  <div id="panel-content"></div>
+</div>
+
+</div> <!-- layout-wrapper -->
+
+
+
+</body>
+</html>

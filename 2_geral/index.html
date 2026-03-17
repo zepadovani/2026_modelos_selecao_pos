@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quadro Comparativo — PPG Música</title>
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body { background: #F4F4F5; padding-top: 20px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden; margin-bottom: 40px; }
+
+    .header-area { padding: 30px; border-bottom: 1px solid #E4E4E7; display: flex; align-items: center; justify-content: space-between; }
+    h1 { font-size: 1.8rem; color: #18181B; margin: 0; }
+    .back-btn { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #71717A; font-weight: 600; font-size: 0.9rem; transition: color 0.2s; }
+    .back-btn:hover { color: #18181B; }
+
+    .table-container { overflow-x: auto; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+    th { background: #F4F4F5; padding: 12px 16px; font-weight: 700; color: #52525B; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; border-bottom: 2px solid #E4E4E7; white-space: nowrap; cursor: pointer; user-select: none; }
+    th:hover { background: #E4E4E7; }
+    th i { margin-left: 4px; color: #A1A1AA; }
+    td { padding: 14px 16px; border-bottom: 1px solid #F0F0F0; vertical-align: middle; }
+    tr:hover td { background: #FAFAFA; }
+
+    .td-sigla { display: flex; align-items: center; gap: 12px; font-size: 1.1rem; }
+    .td-logo { width: 32px; height: 32px; object-fit: contain; }
+
+    .text-center { text-align: center; }
+
+    .vagas-box { display: inline-flex; align-items: center; gap: 6px; }
+    .vagas-box span { font-weight: 700; font-size: 1.05rem; }
+    .vagas-box small { color: #71717A; font-size: 0.75rem; font-weight: 600; background: #F4F4F5; padding: 2px 6px; border-radius: 12px; }
+
+    .badge { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+    .badge.pres { background: #FEE2E2; color: #B91C1C; }
+    .badge.rem { background: #DCFCE7; color: #15803D; }
+    .badge.rem-star {
+        background: repeating-linear-gradient(-45deg, #FFEDD5, #FFEDD5 4px, #FFF3E0 4px, #FFF3E0 8px);
+        color: #C2410C;
+        border: 1px solid #FDBA74;
+    }
+
+    .inst-container { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .inst-icon { font-size: 1.4rem; color: #52525B; padding: 6px; background: #F4F4F5; border-radius: 8px; transition: transform 0.2s, background 0.2s; cursor: help; }
+    .inst-icon:hover { background: #E4E4E7; transform: scale(1.1); color: #18181B; }
+
+    .filter-bar { padding: 16px 20px; background: #FAFAFA; border-bottom: 1px solid #E4E4E7; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .filter-group { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #52525B; font-weight: 600; }
+    select, input { padding: 8px 12px; border: 1px solid #D4D4D8; border-radius: 8px; font-size: 0.85rem; outline: none; transition: border-color 0.2s; }
+    select:focus, input:focus { border-color: #3B82F6; }
+
+    .fixed-author { position: fixed; bottom: 10px; right: 10px; font-size: 0.75rem; color: #888; text-align: right; z-index: 9999; background: rgba(255,255,255,0.85); padding: 4px 8px; border-radius: 4px; pointer-events: auto; }
+    .fixed-author a { color: #888; text-decoration: underline; }
+    .fixed-author a:hover { color: #555; }
+  </style>
+
+  <script>
+    window.BASE_PATH = "../";
+    window.CITE_TXT = `PADOVANI, José H. Levantamento dos Processos Seletivos de PPG em Música 2025/2026. Disponível em: <a href='https://github.com/zepadovani/2026_modelos_selecao_pos' target='_blank'>https://github.com/zepadovani/2026_modelos_selecao_pos</a>. Acesso em: 17/03/2026.`;
+    window.CITE_BIB = `@misc{ppgmusselecao2026_geral,
+  author = {Padovani, José Henrique},
+  title = {Levantamento dos Processos Seletivos de PPG em Música 2025/2026},
+  year = {2026},
+  url = {https://github.com/zepadovani/2026_modelos_selecao_pos},
+  note = {Acesso em: 17/03/2026}
+}`;
+    window.VERSION_STR = `0.17 (17/03/2026 18:49)`;
+  </script>
+  <script src="../common.js"></script>
+</head>
+
+<body>
+
+<div style="background: #f8f9fa; color: #888; padding: 4px 10px; font-size: 0.75rem; text-align: right; border-bottom: 1px solid #e0e0e0; font-family: monospace;">v0.17 • 17/03/2026 18:49</div>
+
+<div class="container">
+    <div class="header-area">
+        <h1>Quadro Comparativo Geral</h1>
+        <a href="../index.html" class="back-btn"><i class="ph ph-arrow-left"></i> Voltar ao Índice</a>
+    </div>
+
+    <div class="filter-bar">
+        <div class="filter-group">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Buscar instituição..." onkeyup="filterTable()">
+        </div>
+        <div class="filter-group">
+            <label>Modalidade:</label>
+            <select id="modFilter" onchange="filterTable()">
+                <option value="all">Todas</option>
+                <option value="Presencial">Presencial (Todas as linhas)</option>
+                <option value="Remoto*">Com Etapa Presencial (Algumas linhas)</option>
+                <option value="Remoto">100% Remoto</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="legenda" style="padding: 15px 20px; background: #FAFAFA; border-bottom: 1px solid #E4E4E7; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; font-size: 0.85rem; color: #52525B;">
+        <span class="leg-item"><span class="leg-badge" style="background:#1565C0; color: white; padding: 2px 6px; border-radius: 4px; margin-right: 4px;">S</span>Síncrono Remoto</span>
+        <span class="leg-item"><span class="leg-badge" style="background:#E65100; color: white; padding: 2px 6px; border-radius: 4px; margin-right: 4px;">A</span>Assíncrono Remoto</span>
+        <span class="leg-item"><span class="leg-badge" style="background:#B71C1C; color: white; padding: 2px 6px; border-radius: 4px; margin-right: 4px;">P</span>Presencial</span>
+        <span class="leg-item"><span class="leg-badge" style="background:#880E4F; color: white; padding: 2px 6px; border-radius: 4px; margin-right: 4px;">FS</span>Presencial fora de sede</span>
+        <span class="leg-item"><span class="leg-badge" style="background:#546E7A; color: white; padding: 2px 6px; border-radius: 4px; margin-right: 4px;">N</span>Não especificado</span>
+    </div>
+
+    <div class="table-container">
+        <table id="compTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Instituição <i class="ph ph-caret-up-down"></i></th>
+                    <th onclick="sortTable(1)">Vagas <i class="ph ph-caret-up-down"></i></th>
+                    <th class="text-center" onclick="sortTable(2)">Linhas <i class="ph ph-caret-up-down"></i></th>
+                    <th class="text-center" onclick="sortTable(3)">Cotas <i class="ph ph-caret-up-down"></i></th>
+                    <th class="text-center" onclick="sortTable(4)">Modalidade <i class="ph ph-caret-up-down"></i></th>
+                    <th class="text-center">Avaliações Encontradas</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/01-UFMG.html" style="color: #C8102E; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/01-UFMG.png" class="td-logo" onerror="this.style.display='none'">
+                    UFMG
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">64</span> <small>(M:32 D:32)</small></div></td>
+            <td class="text-center">6</td>
+            <td class="text-center">34.4%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-pencil-line inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Prova Escrita (Síncrono Remoto)"></i><i class="ph ph-identification-card inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Currículo (Assíncrono Remoto)"></i><i class="ph ph-music-notes-simple inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Performance/Prática (Síncrono Remoto)"></i><i class="ph ph-notebook inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Portfólio (Síncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i><i class="ph ph-clipboard-text inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Projeto (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/02-UNICAMP.html" style="color: #6F2DBD; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/02-UNICAMP.png" class="td-logo" onerror="this.style.display='none'">
+                    UNICAMP
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">77</span> <small>(M:– D:–)</small></div></td>
+            <td class="text-center">3</td>
+            <td class="text-center">0.0%*</td>
+            <td class="text-center" data-sort="Remoto*"><span class="badge rem-star" title="Etapa presencial em apenas algumas linhas">Remoto*</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-notebook inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Portfólio (Assíncrono Remoto)"></i><i class="ph ph-music-notes-simple inst-icon" style="color: #B71C1C; background: #FFEBEE; border: 1px solid #B71C1C40;" title="Performance/Prática (Presencial)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/03-UFRGS.html" style="color: #DA4540; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/03-UFRGS.png" class="td-logo" onerror="this.style.display='none'">
+                    UFRGS
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">26</span> <small>(M:21 D:5)</small></div></td>
+            <td class="text-center">1</td>
+            <td class="text-center">34.6%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-identification-card inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Currículo (Assíncrono Remoto)"></i><i class="ph ph-music-notes-simple inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Performance/Prática (Assíncrono Remoto)"></i><i class="ph ph-pencil-line inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Prova Escrita (Síncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/04-USP.html" style="color: #003366; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/04-USP.png" class="td-logo" onerror="this.style.display='none'">
+                    USP
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">77</span> <small>(M:39 D:38)</small></div></td>
+            <td class="text-center">6</td>
+            <td class="text-center">30.0%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-music-notes-simple inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Performance/Prática (Assíncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/05-UFPB.html" style="color: #3B85F2; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/05-UFPB.png" class="td-logo" onerror="this.style.display='none'">
+                    UFPB
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">44</span> <small>(M:28 D:16)</small></div></td>
+            <td class="text-center">5</td>
+            <td class="text-center">50.0%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-pencil-line inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Prova Escrita (Síncrono Remoto)"></i><i class="ph ph-music-notes-simple inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Performance/Prática (Síncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i><i class="ph ph-identification-card inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Currículo (Assíncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/06-UFRJ.html" style="color: #113263; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/06-UFRJ.png" class="td-logo" onerror="this.style.display='none'">
+                    UFRJ
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">31</span> <small>(M:18 D:13)</small></div></td>
+            <td class="text-center">5</td>
+            <td class="text-center">41.9%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-identification-card inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Currículo (Assíncrono Remoto)"></i><i class="ph ph-pencil-line inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Prova Escrita (Síncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/07-UNIRIO.html" style="color: #3579BD; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/07-UNIRIO.png" class="td-logo" onerror="this.style.display='none'">
+                    UNIRIO
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">33</span> <small>(M:21 D:12)</small></div></td>
+            <td class="text-center">5</td>
+            <td class="text-center">63.6%</td>
+            <td class="text-center" data-sort="Presencial"><span class="badge pres">Presencial</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-pencil-line inst-icon" style="color: #B71C1C; background: #FFEBEE; border: 1px solid #B71C1C40;" title="Prova Escrita (Presencial)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #B71C1C; background: #FFEBEE; border: 1px solid #B71C1C40;" title="Entrevista (Presencial)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/08-UDESC.html" style="color: #5D8C55; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/08-UDESC.png" class="td-logo" onerror="this.style.display='none'">
+                    UDESC
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">20</span> <small>(M:10 D:10)</small></div></td>
+            <td class="text-center">2</td>
+            <td class="text-center">50.0%</td>
+            <td class="text-center" data-sort="Presencial"><span class="badge pres">Presencial</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-music-notes-simple inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Performance/Prática (Assíncrono Remoto)"></i><i class="ph ph-pencil-line inst-icon" style="color: #B71C1C; background: #FFEBEE; border: 1px solid #B71C1C40;" title="Prova Escrita (Presencial)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #B71C1C; background: #FFEBEE; border: 1px solid #B71C1C40;" title="Entrevista (Presencial)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/09-UFBA.html" style="color: #5F6297; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/09-UFBA.png" class="td-logo" onerror="this.style.display='none'">
+                    UFBA
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">39</span> <small>(M:25 D:14)</small></div></td>
+            <td class="text-center">4</td>
+            <td class="text-center">59.0%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-music-notes-simple inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Performance/Prática (Assíncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/10-UFG.html" style="color: #3273BA; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/10-UFG.png" class="td-logo" onerror="this.style.display='none'">
+                    UFG
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">22</span> <small>(M:22 D:–)</small></div></td>
+            <td class="text-center">3</td>
+            <td class="text-center">50.0%</td>
+            <td class="text-center" data-sort="Presencial"><span class="badge pres">Presencial</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-music-notes-simple inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Performance/Prática (Assíncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i><i class="ph ph-pencil-line inst-icon" style="color: #B71C1C; background: #FFEBEE; border: 1px solid #B71C1C40;" title="Prova Escrita (Presencial)"></i><i class="ph ph-identification-card inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Currículo (Assíncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/11-UFPR.html" style="color: #2C5F92; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/11-UFPR.png" class="td-logo" onerror="this.style.display='none'">
+                    UFPR
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">23</span> <small>(M:15 D:8)</small></div></td>
+            <td class="text-center">3</td>
+            <td class="text-center">20.0%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-pencil-line inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Prova Escrita (Assíncrono Remoto)"></i><i class="ph ph-identification-card inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Currículo (Assíncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/12-UNESPAR.html" style="color: #009F19; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/12-UNESPAR.png" class="td-logo" onerror="this.style.display='none'">
+                    UNESPAR
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">25</span> <small>(M:25 D:–)</small></div></td>
+            <td class="text-center">2</td>
+            <td class="text-center">28.0%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/13-UFSJ.html" style="color: #B34443; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/13-UFSJ.png" class="td-logo" onerror="this.style.display='none'">
+                    UFSJ
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">22</span> <small>(M:22 D:–)</small></div></td>
+            <td class="text-center">2</td>
+            <td class="text-center">31.8%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-pencil-line inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Prova Escrita (Síncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/14-UFU.html" style="color: #393773; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/14-UFU.png" class="td-logo" onerror="this.style.display='none'">
+                    UFU
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">25</span> <small>(M:25 D:–)</small></div></td>
+            <td class="text-center">1</td>
+            <td class="text-center">36.0%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-list-checks inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Outros (Assíncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i><i class="ph ph-identification-card inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Currículo (Assíncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/15-UEPA.html" style="color: #5B589C; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/15-UEPA.png" class="td-logo" onerror="this.style.display='none'">
+                    UEPA
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">22</span> <small>(M:22 D:–)</small></div></td>
+            <td class="text-center">2</td>
+            <td class="text-center">36.4%</td>
+            <td class="text-center" data-sort="Presencial"><span class="badge pres">Presencial</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-pencil-line inst-icon" style="color: #B71C1C; background: #FFEBEE; border: 1px solid #B71C1C40;" title="Prova Escrita (Presencial)"></i><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #B71C1C; background: #FFEBEE; border: 1px solid #B71C1C40;" title="Entrevista (Presencial)"></i><i class="ph ph-identification-card inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Currículo (Assíncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/16-UEM.html" style="color: #DA4540; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/16-UEM.png" class="td-logo" onerror="this.style.display='none'">
+                    UEM
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">15</span> <small>(M:15 D:–)</small></div></td>
+            <td class="text-center">2</td>
+            <td class="text-center">6.7%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-pencil-line inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Prova Escrita (Assíncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/17-UFPE.html" style="color: #A7223C; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/17-UFPE.png" class="td-logo" onerror="this.style.display='none'">
+                    UFPE
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">16</span> <small>(M:16 D:–)</small></div></td>
+            <td class="text-center">2</td>
+            <td class="text-center">31.2%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i><i class="ph ph-identification-card inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Currículo (Assíncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/18-UNESP.html" style="color: #0093DD; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/18-UNESP.png" class="td-logo" onerror="this.style.display='none'">
+                    UNESP
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">64</span> <small>(M:37 D:27)</small></div></td>
+            <td class="text-center">5</td>
+            <td class="text-center">60.0%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-identification-card inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Currículo (Assíncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i><i class="ph ph-music-notes-simple inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Performance/Prática (Assíncrono Remoto)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/19-UFRN.html" style="color: #4192D3; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/19-UFRN.png" class="td-logo" onerror="this.style.display='none'">
+                    UFRN
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">19</span> <small>(M:19 D:–)</small></div></td>
+            <td class="text-center">2</td>
+            <td class="text-center">31.6%</td>
+            <td class="text-center" data-sort="Presencial"><span class="badge pres">Presencial</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-pencil-line inst-icon" style="color: #B71C1C; background: #FFEBEE; border: 1px solid #B71C1C40;" title="Prova Escrita (Presencial)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #B71C1C; background: #FFEBEE; border: 1px solid #B71C1C40;" title="Entrevista (Presencial)"></i></div></td>
+        </tr>
+        
+        <tr>
+            <td class="td-sigla">
+                <a href="../1_detalhado/20-UNB.html" style="color: #327427; text-decoration: none; font-weight: bold;">
+                    <img src="../assets/20-UNB.png" class="td-logo" onerror="this.style.display='none'">
+                    UNB
+                </a>
+            </td>
+            <td><div class="vagas-box"><span title="Total">29</span> <small>(M:18 D:11)</small></div></td>
+            <td class="text-center">2</td>
+            <td class="text-center">37.9%</td>
+            <td class="text-center" data-sort="Remoto"><span class="badge rem">Remoto</span></td>
+            <td class="text-center"><div class="inst-container"><i class="ph ph-clipboard-text inst-icon" style="color: #E65100; background: #FFF3E0; border: 1px solid #E6510040;" title="Projeto (Assíncrono Remoto)"></i><i class="ph ph-pencil-line inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Prova Escrita (Síncrono Remoto)"></i><i class="ph ph-chats-teardrop inst-icon" style="color: #1565C0; background: #E3F2FD; border: 1px solid #1565C040;" title="Entrevista (Síncrono Remoto)"></i></div></td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+
+function filterTable() {
+    const input = document.getElementById("searchInput").value.toUpperCase();
+    const modFilter = document.getElementById("modFilter").value;
+    const table = document.getElementById("compTable");
+    const tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+        let tdSigla = tr[i].getElementsByTagName("td")[0];
+        let tdMod = tr[i].getElementsByTagName("td")[4];
+
+        if (tdSigla && tdMod) {
+            let txtValueSigla = tdSigla.textContent || tdSigla.innerText;
+            let txtValueMod = tdMod.getAttribute("data-sort") || tdMod.textContent || tdMod.innerText;
+
+            let matchText = txtValueSigla.toUpperCase().indexOf(input) > -1;
+            let matchMod = modFilter === "all" || txtValueMod.trim() === modFilter;
+
+            if (matchText && matchMod) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+let sortAsc = true;
+function sortTable(n) {
+    const table = document.getElementById("compTable");
+    let rows, switching, i, x, y, shouldSwitch;
+    switching = true;
+
+    while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+
+            let valX = x.getAttribute("data-sort") || x.innerHTML.toLowerCase().replace(/<[^>]*>?/gm, '');
+            let valY = y.getAttribute("data-sort") || y.innerHTML.toLowerCase().replace(/<[^>]*>?/gm, '');
+
+            // Extract number for sorting if possible
+            let numX = parseFloat(valX);
+            let numY = parseFloat(valY);
+
+            if (!isNaN(numX) && !isNaN(numY)) {
+                valX = numX;
+                valY = numY;
+            }
+
+            if (sortAsc) {
+                if (valX > valY) { shouldSwitch = true; break; }
+            } else {
+                if (valX < valY) { shouldSwitch = true; break; }
+            }
+        }
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+        }
+    }
+    sortAsc = !sortAsc;
+}
+</script>
+
+
+</body>
+</html>
