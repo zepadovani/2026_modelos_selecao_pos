@@ -12,19 +12,42 @@
       background: #F4F4F5; color: #1A1A1A; line-height: 1.45;
       padding: 0; margin: 0;
     }
-    .container { width: 100%; max-width: 900px; margin: 40px auto; padding: 0 20px; }
-    @media (min-width: 1024px) { .container { max-width: 80%; } }
-    h1 { font-size: 2rem; margin-bottom: 20px; color: #333; }
+    .container { width: 100%; max-width: 1600px; margin: 20px auto; padding: 0 30px; }
     
+    h1 { font-size: 1.8rem; margin-bottom: 20px; color: #333; }
+    
+    .main-layout { display: flex; gap: 0; align-items: stretch; height: 100%; }
+    .left-col { flex: 1; padding-right: 20px; min-width: 300px; }
+    .right-col { width: 400px; padding-left: 20px; min-width: 250px; border-left: 1px solid #ddd; }
+    
+    .resizer {
+        width: 10px;
+        cursor: col-resize;
+        background: transparent;
+        transition: background 0.2s;
+        flex-shrink: 0;
+        margin: 0 -5px;
+        z-index: 10;
+        position: relative;
+    }
+    .resizer:hover { background: rgba(0,0,0,0.1); }
+
+    @media (max-width: 1024px) { 
+        .main-layout { flex-direction: column-reverse; gap: 20px; } 
+        .right-col { width: 100%; border-left: none; padding-left: 0; }
+        .left-col { padding-right: 0; }
+        .resizer { display: none; }
+    }
+
     .section-title {
-      font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;
-      color: #555; margin-top: 40px; margin-bottom: 20px;
-      border-bottom: 1px solid #ddd; padding-bottom: 10px;
+      font-size: 1.0rem; text-transform: uppercase; letter-spacing: 1px;
+      color: #666; margin-bottom: 15px; border-bottom: 2px solid #E4E4E7; padding-bottom: 6px;
+      margin-top: 0;
     }
 
     .grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
     }
 
     .index-card {
@@ -34,20 +57,25 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .index-card:hover { transform: translateY(-4px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+    .index-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
 
-    .card-bar { height: 6px; width: 100%; }
-    .card-content { padding: 16px; flex: 1; }
-    .sigla { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
-    .desc { font-size: 0.85rem; color: #888; }
+    .card-bar { height: 5px; width: 100%; }
+    .card-content { padding: 14px; flex: 1; }
+    .sigla { font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; color: #333; }
+    .desc { font-size: 0.8rem; color: #888; }
     
     .card-arrow {
-      position: absolute; bottom: 12px; right: 12px;
-      color: #ddd; font-size: 1.2rem;
+      position: absolute; bottom: 10px; right: 10px;
+      color: #ddd; font-size: 1.1rem;
     }
     .index-card:hover .card-arrow { color: #333; }
 
-    .disclaimer-box { background: #fff3cd; color: #856404; padding: 16px; margin-bottom: 30px; border-radius: 8px; border: 1px solid #ffeeba; font-size: 0.95rem; line-height: 1.5; }
+    .disclaimer-box { background: #fff3cd; color: #856404; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ffeeba; font-size: 0.9rem; line-height: 1.4; }
+
+    .sobre-content { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-size: 0.9rem; }
+    .sobre-content h3 { margin-top: 0; margin-bottom: 8px; color: #333; font-size: 1rem; }
+    .sobre-content p { margin-bottom: 15px; color: #555; line-height: 1.5; }
+    .sobre-content ul { margin-left: 15px; color: #555; line-height: 1.4; }
 
     .fixed-author { position: fixed; bottom: 10px; right: 10px; font-size: 0.75rem; color: #888; text-align: right; z-index: 9999; background: rgba(255,255,255,0.85); padding: 4px 8px; border-radius: 4px; pointer-events: auto; }
     .fixed-author a { color: #888; text-decoration: underline; }
@@ -64,41 +92,107 @@
   url = {https://github.com/zepadovani/2026_modelos_selecao_pos},
   note = {Acesso em: 17/03/2026}
 }`;
-    window.VERSION_STR = `0.27 (17/03/2026 20:05)`;
+    window.VERSION_STR = `0.04 (17/03/2026 22:48)`;
+  
+    document.addEventListener("DOMContentLoaded", function() {
+        const resizer = document.getElementById('dragMe');
+        const leftSide = resizer.previousElementSibling;
+        const rightSide = resizer.nextElementSibling;
+
+        // Mouse position and right column width tracking
+        let x = 0;
+        let rightStartWidth = 0;
+        
+        const mouseDownHandler = function(e) {
+            x = e.clientX;
+            const rightRect = rightSide.getBoundingClientRect();
+            rightStartWidth = rightRect.width;
+
+            // Attach listeners
+            document.addEventListener('mousemove', mouseMoveHandler);
+            document.addEventListener('mouseup', mouseUpHandler);
+            
+            // Styling for drag operation
+            resizer.style.cursor = 'col-resize';
+            document.body.style.cursor = 'col-resize';
+            document.body.style.userSelect = 'none';
+            
+            // Optional: disable pointer events on iframes/text to prevent selection issues
+            leftSide.style.userSelect = 'none';
+            leftSide.style.pointerEvents = 'none';
+            rightSide.style.userSelect = 'none';
+            rightSide.style.pointerEvents = 'none';
+        };
+
+        const mouseMoveHandler = function(e) {
+            const dx = e.clientX - x; 
+            // Moving mouse to left (negative dx) increases right width
+            // Moving mouse to right (positive dx) decreases right width
+            const newRightWidth = rightStartWidth - dx;
+            
+            // Min/Max constraints
+            if (newRightWidth < 200) return; 
+            if (newRightWidth > window.innerWidth * 0.7) return; 
+
+            rightSide.style.width = `${newRightWidth}px`;
+        };
+
+        const mouseUpHandler = function() {
+            // Cleanup listeners
+            document.removeEventListener('mousemove', mouseMoveHandler);
+            document.removeEventListener('mouseup', mouseUpHandler);
+            
+            // Reset styles
+            resizer.style.removeProperty('cursor');
+            document.body.style.removeProperty('cursor');
+            document.body.style.removeProperty('user-select');
+            
+            leftSide.style.removeProperty('user-select');
+            leftSide.style.removeProperty('pointer-events');
+            rightSide.style.removeProperty('user-select');
+            rightSide.style.removeProperty('pointer-events');
+        };
+        
+        if (resizer) {
+            resizer.addEventListener('mousedown', mouseDownHandler);
+        }
+    });
   </script>
   <script src="common.js"></script>
 </head>
 
 <body>
 
-<div style="background: #f8f9fa; color: #888; padding: 4px 10px; font-size: 0.75rem; text-align: right; border-bottom: 1px solid #e0e0e0; font-family: monospace;">v0.27 • 17/03/2026 20:05</div>
+<div style="background: #f8f9fa; color: #888; padding: 4px 10px; font-size: 0.75rem; text-align: right; border-bottom: 1px solid #e0e0e0; font-family: monospace;">v0.04 • 17/03/2026 22:48</div>
 
 <div class="container">
   <h1>Estudo transversal de modelos de seleção em PPGs Acadêmicos da área de Música - 2025-26</h1>
 
-  
   <div class="disclaimer-box">
     <strong>Aviso Importante:</strong> Os dados apresentados neste site foram extraídos de editais originais que passaram por um processo de simplificação utilizando Inteligência Artificial (Gemini), com o objetivo de estruturar as informações e permitir a comparação entre diferentes programas. Devido à natureza automatizada desse processo, <strong>os dados podem conter imprecisões ou omissões</strong>. Para informações oficiais e detalhes completos sobre qualquer processo seletivo, recomenda-se fortemente a consulta ao edital original da respectiva instituição.
   </div>
 
-  <div class="section-title" id="sobre">1. Sobre o Estudo</div>
-  <div class="sobre-content" style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-    <h3 style="margin-bottom: 10px; color: #333;">Objetivos</h3>
-    <p style="margin-bottom: 20px; color: #555; line-height: 1.6;">Este estudo visa mapear e comparar os processos seletivos dos Programas de Pós-Graduação Acadêmicos em Música no Brasil para o biênio 2025-2026, oferecendo uma visão estruturada sobre linhas de pesquisa, vagas, cotas e modalidades de avaliação.</p>
-
-    <h3 style="margin-bottom: 10px; color: #333;">Metodologia</h3>
-    <p style="margin-bottom: 20px; color: #555; line-height: 1.6;">Esse estudo foi realizado a partir da simplificação e estruturação de dados de editais publicados entres os anos de 2024 e 2026. O processo de extração utilizou modelos de Inteligência Artificial (Gemini 3.1 Pro para simplificação do texto e Gemini 2.5 Flash para extração de dados estruturados em JSON).</p>
-    <p style="margin-bottom: 20px; color: #555; line-height: 1.6;"><strong>Aviso:</strong> Devido à natureza automatizada do processo de extração, os dados podem apresentar inconsistências ou omissões pontuais, o que poderá ser corrigido em versões posteriores. O estudo será atualizado regularmente; recomenda-se atenção à versão e à data/horário de publicação do painel (atualizados automaticamente a cada execução).</p>
-
-    <h3 style="margin-bottom: 10px; color: #333;">Materiais de referência</h3>
-    <ul style="margin-left: 20px; color: #555; line-height: 1.6; font-size: 0.9rem;">
-        <li><strong>UFMG</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital Regular nº 154/2026; Edital Suplementar nº 155/2026</li><li><strong>UNICAMP</strong> (Programa de Pós-Graduação em Música): EDITAL PPG-MÚSICA 001/2025</li><li><strong>UFRGS</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital Seleção 2026 Doutorado em Música; Edital Seleção 2026 Mestrado em Música</li><li><strong>USP</strong> (Programa de Pós-Graduação em Música (PPGMUS)): PROCESSO DE SELEÇÃO PARA INGRESSO DE ALUNOS(AS) REGULARES - PPGMUS 2026</li><li><strong>UFPB</strong> (Programa de Pós-Graduação em Música (PPGM)): EDITAL PPGM 02/2026 (Mestrado); EDITAL PPGM 03/2026 (Doutorado)</li><li><strong>UFRJ</strong> (Programa de Pós-Graduação em Música (PPGM)): Edital Nº 552 (Mestrado); Edital Nº 553 (Doutorado)</li><li><strong>UNIRIO</strong> (Programa de Pós-Graduação em Música (PPGM)): Edital N° 01/2025</li><li><strong>UDESC</strong> (Programa de Pós-Graduação em Música - PPGMUS): EDITAL CEART N° 053/2025 - PPGMUS</li><li><strong>UFBA</strong> (Programa de Pós-Graduação em Música (PPGMUS)): EDITAL n.º 02/2025</li><li><strong>UFG</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital 04/2025</li><li><strong>UFPR</strong> (Programa de Pós-Graduação em Música (PPGMúsica)): Edital n. 08/2025</li><li><strong>UNESPAR</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital 13/2024</li><li><strong>UFSJ</strong> (Programa de Pós-Graduação em Música (PPGMUSI)): EDITAL PPGMUSI/UFSJ Nº 004/2025</li><li><strong>UFU</strong> (Programa de Pós-Graduação em Música (PPGMU)): EDITAL PPGMU Nº 5/2025</li><li><strong>UEPA</strong> (Programa de Pós-Graduação em Música na Amazônia (PPGMUSA)): EDITAL N°091/2025-UEPA</li><li><strong>UEM</strong> (Programa de Pós-Graduação em Música (PMU)): EDITAL N° 025/2025 - PMU</li><li><strong>UFPE</strong> (Programa de Pós-Graduação em Música (PPGMúsica)): Edital nº 01/2024</li><li><strong>UNESP</strong> (Programa de Pós-Graduação em Música (PPG Música)): PROCESSO SELETIVO ALUNO REGULAR - INGRESSO 2026 (SELEÇÃO PARA MESTRADO E DOUTORADO - PPG MÚSICA)</li><li><strong>UFRN</strong> (Programa de Pós-Graduação em Música (PPGMus)): EDITAL 001/2025</li><li><strong>UNB</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital Nº 03/2025</li>
-    </ul>
-  </div>
-
-  <div class="section-title" style="margin-top: 50px;">2. Visão detalhada</div>
-  <div class="grid">
+  <div class="main-layout">
     
+    <!-- Esquerda: Comparativo e Grid -->
+    <div class="left-col">
+        <div class="section-title">Comparativo Geral</div>
+        <div style="margin-bottom: 30px;">
+            <a href="2_geral/index.html" class="index-card">
+                <div class="card-bar" style="background-color: #990333"></div>
+                <div class="card-content" style="display:flex; align-items:center; justify-content:space-between;">
+                    <div>
+                        <div class="sigla" style="font-size: 1.2rem; color: #333"><i class="ph ph-table"></i> Quadro Comparativo Geral</div>
+                        <div class="desc">Acesse a tabela unificada com todos os programas</div>
+                    </div>
+                    <i class="ph ph-arrow-right" style="font-size:1.5rem; color:#999"></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="section-title">Visão Detalhada por Instituição</div>
+        <div class="grid">
+            
         <a href="1_detalhado/01-UFMG.html" class="index-card" style="background-color: #f6dbdf; border: 1px solid #C8102E33; border-radius: 16px;">
             <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
                 <img src="assets/img/01-UFMG.png" alt="Logo UFMG" style="max-height: 80px; max-width: 100%; object-fit: contain; margin-bottom: 12px;" onerror="this.style.display='none'">
@@ -219,22 +313,31 @@
             </div>
         </a>
         
-  </div>
-
-  <div class="section-title" style="margin-top: 50px;">3. Comparativo Geral</div>
-  <div class="grid">
-    <a href="2_geral/index.html" class="index-card">
-        <div class="card-bar" style="background-color: #333"></div>
-        <div class="card-content">
-            <div class="sigla" style="color: #333"><i class="ph ph-table"></i> Quadro Resumo</div>
-            <div class="desc">Comparar todos os PPGs</div>
         </div>
-        <div class="card-arrow"><i class="ph ph-arrow-right"></i></div>
-    </a>
-  </div>
+    </div>
+    
+    <div class="resizer" id="dragMe"></div>
+
+    <!-- Direita: Sobre -->
+    <div class="right-col">
+        <div class="section-title">Sobre o Estudo</div>
+        <div class="sobre-content">
+            <h3>Objetivos</h3>
+            <p>Este estudo visa mapear e comparar os processos seletivos dos Programas de Pós-Graduação Acadêmicos em Música no Brasil para o biênio 2025-2026, oferecendo uma visão estruturada sobre linhas de pesquisa, vagas, cotas e modalidades de avaliação.</p>
+
+            <h3>Metodologia</h3>
+            <p>Esse estudo foi realizado a partir da simplificação e estruturação de dados de editais publicados entres os anos de 2024 e 2026. O processo de extração utilizou modelos de Inteligência Artificial (Gemini 3.1 Pro para simplificação do texto e Gemini 2.5 Flash para extração de dados estruturados em JSON).</p>
+            <p><strong>Aviso:</strong> Devido à natureza automatizada do processo de extração, os dados podem apresentar inconsistências ou omissões pontuais, o que poderá ser corrigido em versões posteriores.</p>
+
+            <h3>Materiais de referência</h3>
+            <ul>
+                <li><strong>UFMG</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital Regular nº 154/2026; Edital Suplementar nº 155/2026</li><li><strong>UNICAMP</strong> (Programa de Pós-Graduação em Música): EDITAL PPG-MÚSICA 001/2025</li><li><strong>UFRGS</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital Seleção 2026 Doutorado em Música; Edital Seleção 2026 Mestrado em Música</li><li><strong>USP</strong> (Programa de Pós-Graduação em Música (PPGMUS)): PROCESSO DE SELEÇÃO PARA INGRESSO DE ALUNOS(AS) REGULARES - PPGMUS 2026</li><li><strong>UFPB</strong> (Programa de Pós-Graduação em Música (PPGM)): EDITAL PPGM 02/2026 (Mestrado); EDITAL PPGM 03/2026 (Doutorado)</li><li><strong>UFRJ</strong> (Programa de Pós-Graduação em Música (PPGM)): Edital Nº 552 (Mestrado); Edital Nº 553 (Doutorado)</li><li><strong>UNIRIO</strong> (Programa de Pós-Graduação em Música (PPGM)): Edital N° 01/2025</li><li><strong>UDESC</strong> (Programa de Pós-Graduação em Música - PPGMUS): EDITAL CEART N° 053/2025 - PPGMUS</li><li><strong>UFBA</strong> (Programa de Pós-Graduação em Música (PPGMUS)): EDITAL n.º 02/2025</li><li><strong>UFG</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital 04/2025</li><li><strong>UFPR</strong> (Programa de Pós-Graduação em Música (PPGMúsica)): Edital n. 08/2025</li><li><strong>UNESPAR</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital 13/2024</li><li><strong>UFSJ</strong> (Programa de Pós-Graduação em Música (PPGMUSI)): EDITAL PPGMUSI/UFSJ Nº 004/2025</li><li><strong>UFU</strong> (Programa de Pós-Graduação em Música (PPGMU)): EDITAL PPGMU Nº 5/2025</li><li><strong>UEPA</strong> (Programa de Pós-Graduação em Música na Amazônia (PPGMUSA)): EDITAL N°091/2025-UEPA</li><li><strong>UEM</strong> (Programa de Pós-Graduação em Música (PMU)): EDITAL N° 025/2025 - PMU</li><li><strong>UFPE</strong> (Programa de Pós-Graduação em Música (PPGMúsica)): Edital nº 01/2024</li><li><strong>UNESP</strong> (Programa de Pós-Graduação em Música (PPG Música)): PROCESSO SELETIVO ALUNO REGULAR - INGRESSO 2026 (SELEÇÃO PARA MESTRADO E DOUTORADO - PPG MÚSICA)</li><li><strong>UFRN</strong> (Programa de Pós-Graduação em Música (PPGMus)): EDITAL 001/2025</li><li><strong>UNB</strong> (Programa de Pós-Graduação em Música (PPGMUS)): Edital Nº 03/2025</li>
+            </ul>
+        </div>
+    </div>
+
+  </div> <!-- main-layout -->
 </div>
-
-
 
 </body>
 </html>
