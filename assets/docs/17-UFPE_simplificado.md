@@ -1,113 +1,73 @@
 # INFORMAÇÕES GERAIS
-
 * **Instituição (Sigla):** UFPE
-* **Programa:** Programa de Pós-Graduação em Música (PPGMúsica)
-* **Editais de Referência:** Edital nº 01/2024
-* **Ano de Publicação do Edital:** 2024
-* **Ano de Realização das Provas:** 2024
-* **Ano/Semestre de Ingresso:** 2025 / Semestre 1
+* **Programa:** Programa de Pós-Graduação em Música
+* **Editais de Referência:** Edital nº 01/2025
+* **Ano de Publicação do Edital:** 2025
+* **Ano de Realização das Provas:** 2025
+* **Ano/Semestre de Ingresso:** 2026 / Semestre 1
 
 # CONTATOS E LINKS
-
-* **Site de Inscrição/Informações:** https://sigaa.ufpe.br/sigaa/public/processo_seletivo/lista.jsf?nivel=S&aba=p-stricto
+* **Site de Inscrição/Informações:** https://www.ufpe.br/ppgmusica | SIGAA: https://sigaa.ufpe.br/sigaa/public/processo_seletivo/lista.jsf?nivel=S&aba=p-stricto
 * **E-mails de Contato:** ppgmusica.selecao@ufpe.br
-* **Telefones:** Não informado
+* **Telefones:** Não informado no edital.
 
 # VAGAS E COTAS
-
-* **Total Geral de Vagas:** 16 (15 vagas padrão + 1 vaga adicional para servidores)
+* **Total Geral de Vagas:** 16 (15 vagas regulares + 1 vaga adicional para servidores da UFPE)
 * **Vagas Mestrado:** 16
 * **Vagas Doutorado:** 0
-* **Percentual de Cotas Geral:** 31.25% (Considerando as 5 vagas reservadas pela Resolução 17/2021 sobre o total de 16 vagas)
-* **Reserva de Vagas (Detalhes):** São destinadas 5 vagas para pessoas negras (pretas e pardas), quilombolas, ciganas, indígenas, trans (transexuais, transgêneros e travestis), sendo uma destas obrigatoriamente reservada a pessoas com deficiência (PCD). Existe ainda 1 vaga adicional específica para servidores da UFPE.
+* **Percentual de Cotas Geral:** 33,3% (5 vagas de ações afirmativas calculadas sobre as 15 vagas regulares)
+* **Reserva de Vagas (Detalhes):** 5 vagas reservadas para pessoas negras (pretas e pardas), quilombolas, ciganas, indígenas e trans (transexuais, transgêneros e travestis). Destas, 1 vaga é obrigatoriamente reservada para pessoas com deficiência (PCD). Há também 1 vaga adicional exclusiva para servidores da UFPE.
 * **Exige Heteroidentificação?** Sim
-* **Observações sobre Vagas:** Vagas não preenchidas em uma linha de pesquisa podem ser remanejadas para candidatos classificáveis de outra linha. Caso não haja candidatos aprovados em número suficiente para as vagas de ações afirmativas, estas podem ser revertidas para a ampla concorrência.
-* **Vagas por nível (mestrado/doutorado):** Seleção exclusiva para o nível de Mestrado.
-* **Vagas por linha/área de concentração:** 08 vagas para a linha "Música, Cultura e Sociedade" e 07 vagas para a linha "Música, Educação e Sociedade". A vaga de servidor é adicional ao total.
+* **Observações sobre Vagas:** Vagas não preenchidas em uma linha de pesquisa poderão ser remanejadas para candidatos classificáveis de outra linha. Candidatos cotistas aprovados na ampla concorrência serão matriculados na ampla, liberando a vaga de cota. Vagas de ações afirmativas não preenchidas poderão ser revertidas para a ampla concorrência.
+* **Vagas por nível (mestrado/doutorado):** O edital é exclusivo para o nível de Mestrado (16 vagas no total).
+* **Vagas por linha/área de concentração:** As 15 vagas regulares estão distribuídas entre as Linhas de Pesquisa. O edital não fixa um quantitativo exato pré-determinado por linha, indicando que as vagas serão preenchidas por candidatos aprovados e classificados dentro das vagas da Linha escolhida no ato de inscrição.
 
 # ÁREAS DE CONCENTRAÇÃO E LINHAS DE PESQUISA
-
 * **Possui áreas de concentração?** Sim
 * **Quantas áreas de concentração:** 1
 * **Quantas linhas de pesquisa:** 2
 * **Nomes das Áreas de Concentração:** Música e Sociedade
-* **Nomes das Linhas de Pesquisa:** Música, Cultura e Sociedade; Música, Educação e Sociedade.
+* **Nomes das Linhas de Pesquisa:** Música, Cultura e Sociedade; Música, Educação e Sociedade
 
 # CARACTERÍSTICAS DO PROCESSO
-
-* **Modalidade Geral do Processo:** H (Híbrido - Inscrição e Defesa remotas, mas com previsão de heteroidentificação e atividades presenciais eventuais)
+* **Modalidade Geral do Processo:** R - 100% Remoto
 * **Instrumentos Exigidos (Sim/Não):**
   * Exige Prova Escrita: Não
   * Exige Prova Prática/Performance: Não
   * Exige Entrevista/Arguição: Sim
   * Exige Projeto de Pesquisa: Sim
-  * Exige Portfólio: Não
-* **Resumo Proficiência em Idiomas:** O edital não estabelece a proficiência como etapa do processo seletivo de admissão.
+  * Exige Portfólio: Não (Exige apenas Currículo Lattes comprovado)
+* **Resumo Proficiência em Idiomas:** O edital não menciona exigência de exame de proficiência em idiomas para ingresso ou como etapa do processo seletivo.
 
 # DISTRIBUIÇÃO E AVALIAÇÕES
 
-## Nível: Mestrado | Divisão: Música, Cultura e Sociedade
-
-* **Vagas Ampla Concorrência:** 8 (Total da linha, distribuído entre ampla e cotas conforme classificação)
-* **Vagas Cotas:** Reserva de 5 vagas totais para o programa (compartilhada entre as linhas)
-* **Percentual Cotas desta Divisão:** ~33% (Estimado sobre a reserva global do programa)
-* **Detalhamento Vagas Divisão:** Vagas vinculadas à linha escolhida no ato da inscrição.
+## Nível: Mestrado | Divisão: Geral (Distribuídas nas Linhas de Pesquisa)
+* **Vagas Ampla Concorrência:** 10 vagas regulares + 1 vaga adicional para servidores UFPE
+* **Vagas Cotas:** 5 vagas
+* **Percentual Cotas desta Divisão:** 33,3%
+* **Detalhamento Vagas Divisão:** O preenchimento obedecerá à ordem de classificação dentro da Linha de Pesquisa escolhida no ato da inscrição.
 * **Avaliações para esta Divisão:**
 
-  * **Avaliação 1: Avaliação de Pré-projeto de Pesquisa**
+  * **Avaliação 1: Avaliação do Pré-projeto de Pesquisa**
     * **Etapa Oficial:** Etapa 2
     * **Caráter:** Eliminatório
     * **Modalidade:** A - Assíncrono Remoto
     * **Instrumentos:** Projeto de Pesquisa
-    * **Peso na Nota Final (%):** 30% (Peso 3,0)
-    * **Observações:** Nota mínima 7,0. O documento deve ter entre 7 e 15 páginas, ser enviado em PDF anonimizado (sem nome do candidato).
+    * **Peso na Nota Final (%):** 30% (Peso 3,0 na média final)
+    * **Observações:** O arquivo PDF enviado não deve estar identificado (sem o nome do candidato). O texto deve ter de 7 a 15 páginas. A avaliação requer nota mínima 7,0 para aprovação e julgará redação, aderência à linha, viabilidade, problematização e pertinência do tema.
 
-  * **Avaliação 2: Entrevista e Defesa do Pré-projeto**
+  * **Avaliação 2: Entrevista e defesa do pré-projeto de pesquisa**
     * **Etapa Oficial:** Etapa 3
     * **Caráter:** Eliminatório
     * **Modalidade:** S - Síncrono Remoto
     * **Instrumentos:** Entrevista/Arguição
-    * **Peso na Nota Final (%):** 40% (Peso 4,0)
-    * **Observações:** Realizada via plataforma virtual. Exposição de até 10 minutos seguida de 10 minutos de arguição. Nota mínima 7,0.
+    * **Peso na Nota Final (%):** 40% (Peso 4,0 na média final)
+    * **Observações:** Ocorrerá em sala virtual (link disponibilizado pelo PPG). O candidato deve manter a câmera e microfone ligados durante toda a apresentação. São 10 minutos de exposição (com suporte a slides opcional) seguidos de 10 minutos de arguição da banca. Requer nota mínima 7,0.
 
   * **Avaliação 3: Avaliação do Currículo**
     * **Etapa Oficial:** Etapa 4
     * **Caráter:** Classificatório
     * **Modalidade:** A - Assíncrono Remoto
     * **Instrumentos:** Análise de Currículo
-    * **Peso na Nota Final (%):** 30% (Peso 3,0)
-    * **Observações:** Pontuação baseada em Barema (Anexo II), analisando Formação, Experiência Profissional e Atividades Acadêmicas.
-
----
-
-## Nível: Mestrado | Divisão: Música, Educação e Sociedade
-
-* **Vagas Ampla Concorrência:** 7 (Total da linha, distribuído entre ampla e cotas conforme classificação)
-* **Vagas Cotas:** Reserva de 5 vagas totais para o programa (compartilhada entre as linhas)
-* **Percentual Cotas desta Divisão:** ~33% (Estimado sobre a reserva global do programa)
-* **Detalhamento Vagas Divisão:** Vagas vinculadas à linha escolhida no ato da inscrição.
-* **Avaliações para esta Divisão:**
-
-  * **Avaliação 1: Avaliação de Pré-projeto de Pesquisa**
-    * **Etapa Oficial:** Etapa 2
-    * **Caráter:** Eliminatório
-    * **Modalidade:** A - Assíncrono Remoto
-    * **Instrumentos:** Projeto de Pesquisa
-    * **Peso na Nota Final (%):** 30% (Peso 3,0)
-    * **Observações:** Nota mínima 7,0. Avaliação por docentes da linha de pesquisa indicada.
-
-  * **Avaliação 2: Entrevista e Defesa do Pré-projeto**
-    * **Etapa Oficial:** Etapa 3
-    * **Caráter:** Eliminatório
-    * **Modalidade:** S - Síncrono Remoto
-    * **Instrumentos:** Entrevista/Arguição
-    * **Peso na Nota Final (%):** 40% (Peso 4,0)
-    * **Observações:** Formato virtual com obrigatoriedade de câmera ligada. Nota mínima 7,0.
-
-  * **Avaliação 3: Avaliação do Currículo**
-    * **Etapa Oficial:** Etapa 4
-    * **Caráter:** Classificatório
-    * **Modalidade:** A - Assíncrono Remoto
-    * **Instrumentos:** Análise de Currículo
-    * **Peso na Nota Final (%):** 30% (Peso 3,0)
-    * **Observações:** Avaliação dos documentos comprobatórios numerados conforme o Anexo IV.
+    * **Peso na Nota Final (%):** 30% (Peso 3,0 na média final)
+    * **Observações:** Currículo Lattes com comprovações salvas em um único PDF anexado na inscrição (SIGAA), seguindo a numeração e ordem do Barema. Pontuação obedece fórmula matemática que divide os itens em Formação, Experiência Profissional e Atividades Acadêmicas.
