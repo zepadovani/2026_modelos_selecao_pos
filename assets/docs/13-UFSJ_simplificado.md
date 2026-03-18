@@ -1,91 +1,140 @@
 # INFORMAÇÕES GERAIS
-* **Instituição (Sigla):** UFSJ
+* **Instituição (Sigla):** UFSJ (Universidade Federal de São João del-Rei)
 * **Programa:** Programa de Pós-Graduação em Música (PPGMUSI)
-* **Editais de Referência:** EDITAL PPGMUSI/UFSJ Nº 004/2025
+* **Editais de Referência:** Edital PPGMUSI/UFSJ Nº 004/2025 e sua respectiva retificação.
 * **Ano de Publicação do Edital:** 2025
 * **Ano de Realização das Provas:** 2025
-* **Ano/Semestre de Ingresso:** 2026 / Semestre 1
+* **Ano/Semestre de Ingresso:** 2025 / Semestre 2
 
 # CONTATOS E LINKS
-* **Site de Inscrição/Informações:** https://ufsj.edu.br/ppgmusi/
+* **Site de Inscrição/Informações:** https://ufsj.edu.br/ppgmusi/ e https://sigaa.ufsj.edu.br/sigaa/public/processo_seletivo/lista.jsf?nivel=S&aba=p-stricto
 * **E-mails de Contato:** ppgmusi@ufsj.edu.br
-* **Telefones:** Não informados no edital
+* **Telefones:** (32) 3379-5499
 
 # VAGAS E COTAS
-* **Total Geral de Vagas:** 22
-* **Vagas Mestrado:** 22
+* **Total Geral de Vagas:** 20
+* **Vagas Mestrado:** 20
 * **Vagas Doutorado:** 0
-* **Percentual de Cotas Geral:** 31,8%
-* **Reserva de Vagas (Detalhes):** Das 22 vagas, 7 são reservadas para ações afirmativas, distribuídas da seguinte forma: 5 vagas (20%) para candidatos negros (pretos e pardos); 1 vaga (5%) para candidatos indígenas; 1 vaga (5%) para pessoas com deficiência (PcD).
-* **Exige Heteroidentificação?** Sim (via Comissão de Heteroidentificação da UFSJ).
-* **Observações sobre Vagas:** Não há distribuição pré-definida de vagas entre as linhas de pesquisa; a concorrência é global pelo número de vagas. Caso as vagas reservadas para ações afirmativas não sejam preenchidas, elas serão revertidas para a ampla concorrência.
-* **Vagas por nível (mestrado/doutorado)**: Sim, o edital é exclusivo para o nível de Mestrado (22 vagas).
-* **Vagas por linha/área de concentração**: Não. O edital informa explicitamente que não há distribuição pré-definida de vagas para as linhas de pesquisa.
+* **Percentual de Cotas Geral:** Não especificado no edital (O número ou percentual de vagas reservadas não está explícito no texto; o edital remete as regras de classificação para a Resolução nº 025/2022 CONSU-UFSJ).
+* **Reserva de Vagas (Detalhes):** Há política de ações afirmativas para pessoas pretas, pardas, indígenas, quilombolas, com deficiência e em situação de vulnerabilidade social. Candidatos concorrem segundo as normativas da Resolução nº 025/2022 CONSU-UFSJ e Instrução Normativa nº 003/2022 PROPE.
+* **Exige Heteroidentificação?** Não detalhado no edital (Procedimentos de verificação são regidos por instrução normativa externa ao edital).
+* **Observações sobre Vagas:** Vagas adicionais poderão ser ofertadas de acordo com a demanda e disponibilidade de professores orientadores, após aprovação do Colegiado.
+* **Vagas por nível (mestrado/doutorado)**: Sim, o edital é exclusivo para o nível de Mestrado.
+* **Vagas por linha/área de concentração**: Sim, as vagas são divididas rigidamente por linha de pesquisa e subáreas (Saúde, Performance, Formação Musical e Produção Musical).
 
 # ÁREAS DE CONCENTRAÇÃO E LINHAS DE PESQUISA
 * **Possui áreas de concentração?** Sim
 * **Quantas áreas de concentração:** 1
-* **Quantas linhas de pesquisa:** 2
+* **Quantas linhas de pesquisa:** 3 (Sendo a Linha 1 subdividida na oferta de vagas)
 * **Nomes das Áreas de Concentração:** Música
-* **Nomes das Linhas de Pesquisa:** 1. Dimensões teóricas e práticas da performance musical
-  2. Música e interfaces
+* **Nomes das Linhas de Pesquisa:** 1. Dimensões teóricas e práticas da performance musical (Subdividida em Saúde e Performance)
+  2. Dimensões teóricas e práticas da formação musical
+  3. Aspectos estéticos e culturais da produção musical
 
 # CARACTERÍSTICAS DO PROCESSO
-* **Modalidade Geral do Processo:** R - 100% Remoto
+* **Modalidade Geral do Processo:** R - 100% Remoto (Inscrição via SIGAA, envio de documentação online e entrevistas por videoconferência).
 * **Instrumentos Exigidos (Sim/Não):**
-  * Exige Prova Escrita: Sim
-  * Exige Prova Prática/Performance: Sim (Apenas para candidatos da Linha 1)
+  * Exige Prova Escrita: Não
+  * Exige Prova Prática/Performance: Sim (Apenas para candidatos da Linha 1 - Performance, por meio de envio de vídeo).
   * Exige Entrevista/Arguição: Sim
-  * Exige Projeto de Pesquisa: Sim
-  * Exige Portfólio: Sim (Exigido formato de "Memorial" da trajetória do candidato, além de envio de vídeo de performance para a Linha 1).
-* **Resumo Proficiência em Idiomas:** A comprovação de proficiência em língua estrangeira (Inglês, Espanhol, Francês ou Italiano) não faz parte do processo seletivo avaliativo. Ela é exigida apenas dos candidatos aprovados e matriculados, que terão um prazo de até 12 meses após a matrícula para apresentar o comprovante.
-
----
+  * Exige Projeto de Pesquisa: Sim (Anteprojeto de Pesquisa de 6 a 8 páginas).
+  * Exige Portfólio: Não (Exige documentação comprobatória do Currículo Lattes).
+* **Resumo Proficiência em Idiomas:** A comprovação de proficiência em Língua Inglesa não é eliminatória na etapa de seleção. O candidato pode apresentar o certificado no ato da inscrição OU assinar um Termo de Compromisso obrigando-se a apresentar a certificação até 07/08/2026. A não apresentação dentro do prazo impede a realização do Exame de Qualificação e pode gerar desligamento. Exames aceitos: CENEX FALE UFMG, TOEIC, TOEFL (ITP, CTB, IBT), IELTS, Cambridge Exam, Cultura Inglesa São João del-Rei.
 
 # DISTRIBUIÇÃO E AVALIAÇÕES
 
-## Nível: Mestrado | Divisão: Linha 1 - Dimensões teóricas e práticas da performance musical
-* **Vagas Ampla Concorrência:** Até 15 (Concorrência global, vagas compartilhadas com a Linha 2)
-* **Vagas Cotas:** Até 7 (Concorrência global, vagas compartilhadas com a Linha 2)
-* **Percentual Cotas desta Divisão:** 31,8% (Índice global do programa)
-* **Detalhamento Vagas Divisão:** Não há limite ou reserva de vagas exclusivas para esta linha. Os candidatos concorrem ao montante total de 22 vagas do programa.
+## Nível: Mestrado | Divisão: Linha 1 - Dimensões teóricas e práticas da performance musical (SAÚDE)
+* **Vagas Ampla Concorrência:** 5 (Total para a subdivisão; cotistas concorrem neste universo conforme resolução).
+* **Vagas Cotas:** Não especificado numericamente.
+* **Percentual Cotas desta Divisão:** Não especificado numericamente.
+* **Detalhamento Vagas Divisão:** Vagas vinculadas aos orientadores da linha de pesquisa (Alessandro de Oliveira, Álvaro César, Márcio Falcão, Marcelo Parizzi, Sérgio de Figueiredo).
 * **Avaliações para esta Divisão:**
-
-  * **Avaliação 1: Prova de Conhecimentos em Música**
-    * **Etapa Oficial:** Segunda Etapa
-    * **Caráter:** Eliminatório e Classificatório
+  * **Avaliação 1: Defesa do Anteprojeto, Entrevista e Arguição**
+    * **Etapa Oficial:** Primeira Etapa
+    * **Caráter:** Classificatório
     * **Modalidade:** S - Síncrono Remoto
-    * **Instrumentos:** Prova Escrita
-    * **Peso na Nota Final (%):** 50% (A nota final é a média aritmética entre a Segunda e a Terceira Etapas)
-    * **Observações:** Prova online realizada via Google Meet e Google Classroom, com duração máxima de 3 horas. Câmera deve permanecer ligada. A prova é composta por 2 questões dissertativas referentes à bibliografia indicada. Avaliada de 0 a 100 pontos; exige-se nota mínima de 70 pontos para aprovação.
+    * **Instrumentos:** Entrevista/Arguição e Projeto de Pesquisa
+    * **Peso na Nota Final (%):** 50%
+    * **Observações:** Duração de até 50 minutos (sendo até 20 minutos para a defesa do anteprojeto, seguidos de questionamentos). A arguição envolve bibliografia indicada no edital. Ocorre via plataforma on-line (sessão gravada).
 
-  * **Avaliação 2: Defesa do Projeto de Pesquisa, Memorial e Exame Prático de Música**
-    * **Etapa Oficial:** Terceira Etapa
-    * **Caráter:** Eliminatório e Classificatório
-    * **Modalidade:** S - Síncrono Remoto (com componente de envio A - Assíncrono Remoto para o vídeo)
-    * **Instrumentos:** Entrevista/Arguição + Prova Prática/Performance + Projeto de Pesquisa
-    * **Peso na Nota Final (%):** 50% (A nota final é a média aritmética entre a Segunda e a Terceira Etapas)
-    * **Observações:** A pontuação desta etapa (0 a 100) é a soma de 3 avaliações: 1) Exame Prático de Música (até 50 pts), mediante avaliação prévia de um vídeo de 15 a 20 min gravado em link não listado do YouTube e arguição sobre a performance; 2) Arguição do Projeto de Pesquisa (até 25 pts); 3) Arguição do Memorial (até 25 pts). Realizada via videoconferência. Exige-se nota mínima total de 70 pontos.
+  * **Avaliação 2: Análise de Currículo Lattes**
+    * **Etapa Oficial:** Segunda Etapa
+    * **Caráter:** Classificatório
+    * **Modalidade:** A - Assíncrono Remoto
+    * **Instrumentos:** Análise de Currículo
+    * **Peso na Nota Final (%):** 50%
+    * **Observações:** Análise baseada em documentação comprobatória enviada via sistema. Nota final mínima para aprovação no processo completo é 7 (sete).
 
-## Nível: Mestrado | Divisão: Linha 2 - Música e interfaces
-* **Vagas Ampla Concorrência:** Até 15 (Concorrência global, vagas compartilhadas com a Linha 1)
-* **Vagas Cotas:** Até 7 (Concorrência global, vagas compartilhadas com a Linha 1)
-* **Percentual Cotas desta Divisão:** 31,8% (Índice global do programa)
-* **Detalhamento Vagas Divisão:** Não há limite ou reserva de vagas exclusivas para esta linha. Os candidatos concorrem ao montante total de 22 vagas do programa.
+## Nível: Mestrado | Divisão: Linha 1 - Dimensões teóricas e práticas da performance musical (PERFORMANCE)
+* **Vagas Ampla Concorrência:** 5 (Total para a subdivisão; cotistas concorrem neste universo conforme resolução).
+* **Vagas Cotas:** Não especificado numericamente.
+* **Percentual Cotas desta Divisão:** Não especificado numericamente.
+* **Detalhamento Vagas Divisão:** Vagas vinculadas aos orientadores de performance (Antônio Carlos - Flauta, Bruno Soares - Percussão, Elenís Aparecida - Canto, Gabriel Cursino - Piano, Guilherme Caldeira - Violão, Leonardo Barreto - Saxofone).
 * **Avaliações para esta Divisão:**
+  * **Avaliação 1: Defesa do Anteprojeto, Entrevista e Arguição**
+    * **Etapa Oficial:** Primeira Etapa
+    * **Caráter:** Classificatório
+    * **Modalidade:** S - Síncrono Remoto
+    * **Instrumentos:** Entrevista/Arguição e Projeto de Pesquisa
+    * **Peso na Nota Final (%):** 33,33% (Média aritmética entre Etapa 1, Gravação e Etapa 2)
+    * **Observações:** Duração de até 50 minutos (sendo até 20 minutos para a defesa). Ocorre via plataforma on-line (sessão gravada). Arguição inclui bibliografia da área.
 
-  * **Avaliação 1: Prova de Conhecimentos em Música**
+  * **Avaliação 2: Análise das Gravações (Performance)**
+    * **Etapa Oficial:** Segunda Etapa (Critério Específico)
+    * **Caráter:** Classificatório
+    * **Modalidade:** A - Assíncrono Remoto
+    * **Instrumentos:** Prova Prática/Performance (Vídeo)
+    * **Peso na Nota Final (%):** 33,33%
+    * **Observações:** O candidato deve enviar no ato da inscrição o vídeo ou link de três performances musicais próprias. A avaliação considera consistência da interpretação, domínio da técnica, atitude performática e escolha do repertório.
+
+  * **Avaliação 3: Análise de Currículo Lattes**
     * **Etapa Oficial:** Segunda Etapa
-    * **Caráter:** Eliminatório e Classificatório
-    * **Modalidade:** S - Síncrono Remoto
-    * **Instrumentos:** Prova Escrita
-    * **Peso na Nota Final (%):** 50% (A nota final é a média aritmética entre a Segunda e a Terceira Etapas)
-    * **Observações:** Prova online realizada via Google Meet e Google Classroom, com duração máxima de 3 horas. Câmera deve permanecer ligada. A prova é composta por 2 questões dissertativas referentes à bibliografia indicada. Avaliada de 0 a 100 pontos; exige-se nota mínima de 70 pontos para aprovação.
+    * **Caráter:** Classificatório
+    * **Modalidade:** A - Assíncrono Remoto
+    * **Instrumentos:** Análise de Currículo
+    * **Peso na Nota Final (%):** 33,33%
+    * **Observações:** Análise de currículo baseada em documentação comprobatória anexada no SIGAA. Nota final mínima para aprovação no processo completo é 7 (sete).
 
-  * **Avaliação 2: Defesa do Projeto de Pesquisa e do Memorial**
-    * **Etapa Oficial:** Terceira Etapa
-    * **Caráter:** Eliminatório e Classificatório
+## Nível: Mestrado | Divisão: Linha 2 - Dimensões teóricas e práticas da formação musical
+* **Vagas Ampla Concorrência:** 6 (Total para a subdivisão; cotistas concorrem neste universo conforme resolução).
+* **Vagas Cotas:** Não especificado numericamente.
+* **Percentual Cotas desta Divisão:** Não especificado numericamente.
+* **Detalhamento Vagas Divisão:** Vagas vinculadas aos orientadores da Linha 2.
+* **Avaliações para esta Divisão:**
+  * **Avaliação 1: Defesa do Anteprojeto, Entrevista e Arguição**
+    * **Etapa Oficial:** Primeira Etapa
+    * **Caráter:** Classificatório
     * **Modalidade:** S - Síncrono Remoto
-    * **Instrumentos:** Entrevista/Arguição + Projeto de Pesquisa
-    * **Peso na Nota Final (%):** 50% (A nota final é a média aritmética entre a Segunda e a Terceira Etapas)
-    * **Observações:** A pontuação desta etapa (0 a 100) é a soma de 2 avaliações: 1) Arguição do Projeto de Pesquisa (até 50 pts); 2) Arguição do Memorial (até 50 pts). Realizada via videoconferência. Para esta linha, não há a componente de prova prática/performance. Exige-se nota mínima total de 70 pontos.
+    * **Instrumentos:** Entrevista/Arguição e Projeto de Pesquisa
+    * **Peso na Nota Final (%):** 50%
+    * **Observações:** Duração de até 50 minutos (sendo até 20 minutos para a defesa do anteprojeto). Arguição baseada na bibliografia indicada.
+
+  * **Avaliação 2: Análise de Currículo Lattes**
+    * **Etapa Oficial:** Segunda Etapa
+    * **Caráter:** Classificatório
+    * **Modalidade:** A - Assíncrono Remoto
+    * **Instrumentos:** Análise de Currículo
+    * **Peso na Nota Final (%):** 50%
+    * **Observações:** Análise baseada em documentação comprobatória. Nota final mínima para aprovação no processo é 7 (sete).
+
+## Nível: Mestrado | Divisão: Linha 3 - Aspectos estéticos e culturais da produção musical
+* **Vagas Ampla Concorrência:** 4 (Total para a subdivisão; cotistas concorrem neste universo conforme resolução).
+* **Vagas Cotas:** Não especificado numericamente.
+* **Percentual Cotas desta Divisão:** Não especificado numericamente.
+* **Detalhamento Vagas Divisão:** Vagas vinculadas aos orientadores da Linha 3.
+* **Avaliações para esta Divisão:**
+  * **Avaliação 1: Defesa do Anteprojeto, Entrevista e Arguição**
+    * **Etapa Oficial:** Primeira Etapa
+    * **Caráter:** Classificatório
+    * **Modalidade:** S - Síncrono Remoto
+    * **Instrumentos:** Entrevista/Arguição e Projeto de Pesquisa
+    * **Peso na Nota Final (%):** 50%
+    * **Observações:** Duração de até 50 minutos (sendo até 20 minutos para a defesa do anteprojeto). Arguição baseada na bibliografia da Linha 3.
+
+  * **Avaliação 2: Análise de Currículo Lattes**
+    * **Etapa Oficial:** Segunda Etapa
+    * **Caráter:** Classificatório
+    * **Modalidade:** A - Assíncrono Remoto
+    * **Instrumentos:** Análise de Currículo
+    * **Peso na Nota Final (%):** 50%
+    * **Observações:** Análise baseada em documentação comprobatória. Nota final mínima para aprovação no processo é 7 (sete).
